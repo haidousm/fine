@@ -1,5 +1,6 @@
 import numpy as np
 
+
 from layers.Layer_Input import Layer_Input
 
 
@@ -203,3 +204,5 @@ class Model:
 
         for layer in reversed(self.layers):
             layer.backward(layer.next.dinputs)
+
+
