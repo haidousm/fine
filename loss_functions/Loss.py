@@ -45,6 +45,7 @@ class Loss:
         return data_loss, self.regularization_loss()
 
     def calculate_accumulated(self, *, include_regularization=False):
+
         data_loss = self.accumulated_sum / self.accumulated_count
 
         if not include_regularization:
