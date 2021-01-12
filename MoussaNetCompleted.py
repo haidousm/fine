@@ -1,48 +1,12 @@
-# # Copyright (c) 2015 Andrej Karpathy
-# # License: https://github.com/cs231n/cs231n.github.io/blob/master/LICENSE
-# # Source: https://cs231n.github.io/neural-networks-case-study/
-# def spiral_data(samples, classes):
-#     X = np.zeros((samples * classes, 2))
-#     y = np.zeros(samples * classes, dtype='uint8')
-#     for class_number in range(classes):
-#         ix = range(samples * class_number, samples * (class_number + 1))
-#         r = np.linspace(0.0, 1, samples)
-#         t = np.linspace(class_number * 4, (class_number + 1) * 4,
-#                         samples) + np.random.randn(samples) * 0.2
-#         X[ix] = np.c_[r * np.sin(t * 2.5), r * np.cos(t * 2.5)]
-#         y[ix] = class_number
-#     return X, y
-#
-#
 
 
 
-# class Accuracy_Regression(Accuracy):
-#     def __init__(self):
-#         self.precision = None
-#
-#     def init(self, y, reinit=False):
-#         if self.precision is None or reinit:
-#             self.precision = np.std(y) / 250
-#
-#     def compare(self, predictions, y):
-#         return np.absolute(predictions - y) < self.precision
-#
-#
-# class Accuracy_Categorical(Accuracy):
-#     def __init__(self, *, binary=False):
-#         self.binary = binary
-#
-#     def init(self, y):
-#         pass
-#
-#     def compare(self, predictions, y):
-#         if not self.binary and len(y.shape) == 2:
-#             y = np.argmax(y, axis=1)
-#         return predictions == y
-#
-#
-# class MoussaNet:
+
+
+
+
+
+# class Model:
 #     def __init__(self):
 #         self.layers = []
 #         self.softmax_classifier_output = None
