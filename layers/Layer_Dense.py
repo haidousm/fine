@@ -1,8 +1,8 @@
 import numpy as np
 class Layer_Dense:
     def __init__(self, n_inputs, n_neurons,
-                 weight_regularizer_l1=0, weight_regularizer_l2=0,
-                 bias_regularizer_l1=0, bias_regularizer_l2=0):
+                 weight_regularizer_l1=0., weight_regularizer_l2=0.,
+                 bias_regularizer_l1=0., bias_regularizer_l2=0.):
         
         self.weights = 0.01 * np.random.randn(n_inputs, n_neurons)
         self.biases = np.zeros((1, n_neurons))
@@ -38,3 +38,10 @@ class Layer_Dense:
             self.dbiases += 2 * self.bias_regularizer_l2 * self.biases
 
         self.dinputs = np.dot(dvalues, self.weights.T)
+
+    def get_parameters(self):
+        return self.weights, self.biases
+
+    def set_parameters(self, weights, biases):
+        self.weights = weights
+        self.biases = biases
