@@ -1,8 +1,8 @@
 import numpy as np
 
-import loss_functions.Loss
+from loss_functions.Loss import Loss
 
-class Loss_CategoricalCrossEntropy(loss_functions.Loss.Loss):
+class Loss_CategoricalCrossEntropy(Loss):
 
     def forward(self, y_pred, y_true):
 
