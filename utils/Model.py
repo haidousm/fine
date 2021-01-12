@@ -1,5 +1,5 @@
 import numpy as np
-
+import pickle, copy
 
 from layers.Layer_Input import Layer_Input
 
@@ -14,9 +14,12 @@ class Model:
         self.layers.append(layer)
 
     def set(self, *, loss, optimizer, accuracy):
-        self.loss = loss
-        self.optimizer = optimizer
-        self.accuracy = accuracy
+        if loss is not None:
+            self.loss = loss
+        if optimizer is not None:
+            self.optimizer = optimizer
+        if accuracy is not None:
+            self.accuracy = accuracy
 
     def finalize(self):
 
@@ -44,7 +47,8 @@ class Model:
             if hasattr(self.layers[i], 'weights'):
                 self.trainable_layers.append(self.layers[i])
 
-        self.loss.remember_trainable_layers(self.trainable_layers)
+        if self.loss is not None:
+            self.loss.remember_trainable_layers(self.trainable_layers)
 
     def train(self, X, y, *, epochs=1, batch_size=None, print_every=1,
               validation_data=None):
@@ -205,4 +209,47 @@ class Model:
         for layer in reversed(self.layers):
             layer.backward(layer.next.dinputs)
 
+    def get_parameters(self):
 
+        parameters = []
+        for layer in self.trainable_layers:
+            parameters.append(layer.get_parameters())
+
+        return parameters
+
+    def set_parameters(self, parameters):
+
+        for parameter_set, layer in zip(parameters,
+                                        self.trainable_layers):
+            layer.set_parameters(*parameter_set)
+
+    def save_parameters(self, path):
+        with open(path, 'wb') as f:
+            pickle.dump(self.get_parameters(), f)
+
+    def load_parameters(self, path):
+        with open(path, 'rb') as f:
+            self.set_parameters(pickle.load(f))
+
+    def save(self, path):
+        model = copy.deepcopy(self)
+        model.loss.new_pass()
+        model.accuracy.new_pass()
+
+        model.input_layer.__dict__.pop('output', None)
+        model.loss.__dict__.pop('dinputs', None)
+
+        for layer in model.layers:
+            for property in ['inputs', 'output', 'dinputs',
+                             'dweights', 'dbiases']:
+                layer.__dict__.pop(property, None)
+
+        with open(path, 'wb') as f:
+            pickle.dump(model, f)
+
+    @staticmethod
+    def load(path):
+
+        with open(path, 'rb') as f:
+            model = pickle.load(f)
+            return model
