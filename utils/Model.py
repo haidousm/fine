@@ -43,7 +43,7 @@ class Model:
 
         self.loss.remember_trainable_layers(self.trainable_layers)
 
-    def train(self, X, y, *, epochs=1, print_every=1,
+    def train(self, X, y, *, epochs=1, step, print_every=1,
               validation_data=None):
 
         self.accuracy.init(y)
@@ -67,8 +67,15 @@ class Model:
                 self.optimizer.update_params(layer)
             self.optimizer.post_update_params()
 
-            if not epoch % print_every:
-                print(f'epoch: {epoch}, ' +
+            # if not epoch % print_every:
+            #     print(f'epoch: {epoch}, ' +
+            #           f'acc: {accuracy:.3f}, ' +
+            #           f'loss: {loss:.3f} (' +
+            #           f'data_loss: {data_loss:.3f}, ' +
+            #           f'reg_loss: {regularization_loss:.3f}), '
+            #           + f'lr: {self.optimizer.current_learning_rate}')
+            if not step % print_every:
+                print(f'step:{step}, ' +
                       f'acc: {accuracy:.3f}, ' +
                       f'loss: {loss:.3f} (' +
                       f'data_loss: {data_loss:.3f}, ' +
