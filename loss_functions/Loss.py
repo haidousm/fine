@@ -21,7 +21,6 @@ class Loss:
             if layer.bias_regularizer_l2 > 0:
                 regularization_loss += layer.bias_regularizer_l2 * np.sum(layer.biases *
                                                                           layer.biases)
-
         return regularization_loss
 
     def remember_trainable_layers(self, trainable_layers):

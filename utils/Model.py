@@ -1,4 +1,4 @@
-from layers import Layer_Input
+from layers.Layer_Input import Layer_Input
 
 
 class Model:
@@ -72,10 +72,10 @@ class Model:
                       f'acc: {accuracy:.3f}, ' +
                       f'loss: {loss:.3f} (' +
                       f'data_loss: {data_loss:.3f}, ' +
-                      f'reg_loss: {regularization_loss:.3f}), ' + f'lr: {self.optimizer.current_learning_rate}')
+                      f'reg_loss: {regularization_loss:.3f}), '
+                      + f'lr: {self.optimizer.current_learning_rate}')
 
         if validation_data is not None:
-
             X_val, y_val = validation_data
 
             output = self.forward(X_val, training=False)
