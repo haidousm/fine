@@ -44,3 +44,8 @@ model.train(X, y,
             epochs=10,
             batch_size=128,
             print_every=100)
+
+confidences = model.predict(X_test[:5])
+predictions = model.output_layer_activation.predictions(confidences)
+print(predictions)
+print(y_test[:5])
