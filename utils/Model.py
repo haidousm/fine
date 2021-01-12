@@ -1,3 +1,5 @@
+import numpy as np
+
 from layers.Layer_Input import Layer_Input
 
 
@@ -156,6 +158,27 @@ class Model:
               f'acc: {validation_accuracy:.3f}, '
               + f'loss: {validation_loss:.3f}')
 
+    def predict(self, X, *, batch_size=None):
+        prediction_steps = 1
+
+        if batch_size is not None:
+            prediction_steps = len(X) // batch_size
+
+            if prediction_steps * batch_size < len(X):
+                prediction_steps += 1
+        output = []
+        for step in range(prediction_steps):
+
+            if batch_size is None:
+                batch_X = X
+            else:
+                batch_X = X[step * batch_size:(step + 1) * batch_size]
+
+            batch_output = self.forward(batch_X, training=False)
+            output.append(batch_output)
+
+        return np.vstack(output)
+
     def forward(self, X, training):
         self.input_layer.forward(X, training)
 
@@ -165,7 +188,6 @@ class Model:
         return layer.output
 
     def backward(self, output, y):
-
         if self.softmax_classifier_output is not None:
 
             self.softmax_classifier_output.backward(output, y)
