@@ -20,8 +20,8 @@ from optimizers.Optimizer_SGD import Optimizer_SGD
 from utils.accuracy.Accuracy_Categorical import Accuracy_Categorical
 
 np.set_printoptions(linewidth=200)
-
 X, y, X_test, y_test = mnist_data()
+print(X[0].tolist())
 
 X = np.array([image.astype(np.float32) / 255 for image in X])
 X_test = np.array([image.astype(np.float32) / 255 for image in X_test])
@@ -30,22 +30,22 @@ X = X.reshape(X.shape[0], -1)
 X_test = X_test.reshape(X_test.shape[0], -1)
 
 MoussaNet = Model.load("trained_models/digits_mnist.model")
-MoussaNet.evaluate(X_test, y_test)
-# canvas = tk.Tk()
-# canvas.wm_geometry("%dx%d+%d+%d" % (400, 400, 10, 10))
-# canvas.config(bg='white')
-# image_gen = ImageGenerator(canvas, 10, 10)
-#
-# while True:
-#     if image_gen.is_new_image:
-#
-#         image_data = 255 - np.array(image_gen.image)
-#         image_data = image_data.reshape(1, -1).astype(np.float32) / 255
-#         # plt.imshow(image_data.reshape(28, 28))
-#         # plt.show()
-#         confidences = MoussaNet.predict(image_data)
-#         prediction = MoussaNet.output_layer_activation.predictions(confidences)
-#         image_gen.prediction.set(f"Prediction: {prediction}")
-#         image_gen.is_new_image = False
-#     canvas.update_idletasks()
-#     canvas.update()
+
+canvas = tk.Tk()
+canvas.wm_geometry("%dx%d+%d+%d" % (400, 400, 10, 10))
+canvas.config(bg='white')
+image_gen = ImageGenerator(canvas, 10, 10)
+
+while True:
+    if image_gen.is_new_image:
+
+        image_data = 255 - np.array(image_gen.image)
+        image_data = image_data.reshape(1, -1).astype(np.float32) / 255
+        # plt.imshow(image_data.reshape(28, 28))
+        # plt.show()
+        confidences = MoussaNet.predict(image_data)
+        prediction = MoussaNet.output_layer_activation.predictions(confidences)
+        image_gen.prediction.set(f"Prediction: {prediction}")
+        image_gen.is_new_image = False
+    canvas.update_idletasks()
+    canvas.update()
