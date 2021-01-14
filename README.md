@@ -1,2 +1,2 @@
-# moussa-net
-An artificial neural network built from scratch using just Python and Numpy
+# Liras
+An artificial neural network framework built from scratch using just Python and Numpy
