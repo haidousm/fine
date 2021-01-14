@@ -1,10 +1,13 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 context.lineCap = "round";
-context.lineWidth = 10;
+context.lineWidth = 40;
 context.strokeStyle = "#fff";
 
+let _intervalID = -1;
 let intervalID = -1;
+
+let jsonData;
 
 let x = 0,
     y = 0;
@@ -12,13 +15,19 @@ let isMouseDown = false;
 
 const stopDrawing = () => {
     isMouseDown = false;
-    clearInterval(intervalID);
+    setTimeout(function () {
+        clearInterval(_intervalID);
+        clearInterval(intervalID);
+    }, 1000);
 };
 const startDrawing = (event) => {
     isMouseDown = true;
-    // intervalID = setInterval(() => {
-    //     saveImage();
-    // }, 500);
+    _intervalID = setInterval(() => {
+        convertCanvasToJSON();
+    }, 100);
+    intervalID = setInterval(() => {
+        fetchPrediction(jsonData);
+    }, 500);
     [x, y] = [event.offsetX, event.offsetY];
 };
 
@@ -42,10 +51,12 @@ canvas.addEventListener("mouseout", stopDrawing);
 
 jQuery(".clear").on("click", function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
+    clearInterval(_intervalID);
+    clearInterval(intervalID);
     jQuery("#prediction").html("---");
 });
 
-const fetchPrediction = () => {
+const convertCanvasToJSON = () => {
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     data = imageData.data;
 
@@ -71,14 +82,17 @@ const fetchPrediction = () => {
     }
 
     jsonData = JSON.stringify(serverData);
+};
 
+const fetchPrediction = (jsonData) => {
+    //http://haidousm.pythonanywhere.com
     $.ajax({
-        url: "http://haidousm.pythonanywhere.com/predict",
+        url: "http://0.0.0.0:5000/predict",
         type: "post",
         data: jsonData,
 
         success: function (response) {
-            jQuery(".result").html(response);
+            jQuery("#prediction").html(response);
         },
     });
 };
