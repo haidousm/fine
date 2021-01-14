@@ -1,7 +1,7 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 context.lineCap = "round";
-context.lineWidth = 25;
+context.lineWidth = 10;
 context.strokeStyle = "#fff";
 
 let intervalID = -1;
@@ -16,9 +16,9 @@ const stopDrawing = () => {
 };
 const startDrawing = (event) => {
     isMouseDown = true;
-    intervalID = setInterval(() => {
-        saveImage();
-    }, 500);
+    // intervalID = setInterval(() => {
+    //     saveImage();
+    // }, 500);
     [x, y] = [event.offsetX, event.offsetY];
 };
 
@@ -42,7 +42,7 @@ canvas.addEventListener("mouseout", stopDrawing);
 
 jQuery(".clear").on("click", function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    jQuery(".result").html("---");
+    jQuery("#prediction").html("---");
 });
 
 const fetchPrediction = () => {
