@@ -1,7 +1,7 @@
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 context.lineCap = "round";
-context.lineWidth = 40;
+context.lineWidth = 45;
 context.strokeStyle = "#fff";
 
 let _intervalID = -1;
@@ -18,17 +18,18 @@ const stopDrawing = () => {
     setTimeout(function () {
         clearInterval(_intervalID);
         clearInterval(intervalID);
-    }, 1000);
+    }, 500);
 };
 const startDrawing = (event) => {
     isMouseDown = true;
+
+    [x, y] = [event.offsetX, event.offsetY];
     _intervalID = setInterval(() => {
         convertCanvasToJSON();
     }, 100);
     intervalID = setInterval(() => {
         fetchPrediction(jsonData);
     }, 500);
-    [x, y] = [event.offsetX, event.offsetY];
 };
 
 const drawLine = (event) => {
@@ -85,9 +86,8 @@ const convertCanvasToJSON = () => {
 };
 
 const fetchPrediction = (jsonData) => {
-    //http://haidousm.pythonanywhere.com
     $.ajax({
-        url: "http://0.0.0.0:5000/predict",
+        url: "http://haidousm.pythonanywhere.com/predict",
         type: "post",
         data: jsonData,
 
