@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Digit Recognizer</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <style>
             * {
                 padding: 0px;
@@ -15,6 +17,7 @@
             }
             body {
                 background-color: rgba(0, 0, 0, 0.75);
+                user-select: none;
             }
             .instructions {
                 width: 500px;
@@ -22,11 +25,35 @@
                 margin: 0 auto;
                 margin-top: 50px;
             }
-            .terminal-container {
+
+            .content-container {
+                width: 900px;
+                height: 500px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .confidence-container {
+                height: 500px;
+                width: 200px;
+                font-size: 1.2rem;
+            }
+
+            .confidences {
+                margin: 10px;
+                color: rgb(176, 176, 176);
+                font-family: Menlo, Monaco, Consolas, "Liberation Mono",
+                    "Courier New", monospace;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .terminal {
                 background-color: rgb(30, 30, 30);
                 width: 500px;
                 height: 500px;
-                margin: 0 auto;
 
                 border: 1px solid rgb(71, 71, 71);
                 border-radius: 5px;
@@ -108,6 +135,13 @@
                 align-items: center;
                 font-size: 12px;
             }
+
+            .conf-score {
+                background-color: rgb(30, 30, 30);
+                display: inline-block;
+                width: 100px;
+                height: 12px;
+            }
         </style>
     </head>
     <body>
@@ -126,24 +160,41 @@
                 </div>
             </div>
         </div>
-        <div class="terminal-container">
-            <div class="mac-terminal-top-bar">
-                <div class="btn-container">
-                    <button
-                        onclick="window.location.href='https://haidousm.com/';"
-                        class="top-bar-btn red"
-                    ></button>
-                    <button class="top-bar-btn yellow clear"></button>
-                    <button class="top-bar-btn green"></button>
+        <div class="content-container">
+            <div class="confidence-container" style="visibility: hidden"></div>
+            <div class="terminal">
+                <div class="mac-terminal-top-bar">
+                    <div class="btn-container">
+                        <button
+                            onclick="window.location.href='https://haidousm.com/';"
+                            class="top-bar-btn red"
+                        ></button>
+                        <button class="top-bar-btn yellow clear"></button>
+                        <button class="top-bar-btn green"></button>
+                    </div>
+                    <p>Prediction: <span id="prediction">---</span></p>
+                    <div class="btn-container" style="visibility: hidden">
+                        <button class="top-bar-btn red"></button>
+                        <button class="top-bar-btn yellow"></button>
+                        <button class="top-bar-btn green"></button>
+                    </div>
                 </div>
-                <p>Prediction: <span id="prediction">---</span></p>
-                <div class="btn-container" style="visibility: hidden">
-                    <button class="top-bar-btn red"></button>
-                    <button class="top-bar-btn yellow"></button>
-                    <button class="top-bar-btn green"></button>
+                <canvas width="498px" height="498px"></canvas>
+            </div>
+            <div class="confidence-container">
+                <div class="confidences">
+                    <p>0:<span class="conf-score"></span></p>
+                    <p>1:<span class="conf-score"></span></p>
+                    <p>2:<span class="conf-score"></span></p>
+                    <p>3:<span class="conf-score"></span></p>
+                    <p>4:<span class="conf-score"></span></p>
+                    <p>5:<span class="conf-score"></span></p>
+                    <p>6:<span class="conf-score"></span></p>
+                    <p>7:<span class="conf-score"></span></p>
+                    <p>8:<span class="conf-score"></span></p>
+                    <p>9:<span class="conf-score"></span></p>
                 </div>
             </div>
-            <canvas width="498px" height="498px"></canvas>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

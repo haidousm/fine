@@ -15,21 +15,23 @@ let isMouseDown = false;
 
 const stopDrawing = () => {
     isMouseDown = false;
-    setTimeout(function () {
-        clearInterval(_intervalID);
-        clearInterval(intervalID);
-    }, 500);
+    //clearInterval(_intervalID);
+    //clearInterval(intervalID);
+    // setTimeout(function () {
+    //     clearInterval(_intervalID);
+    //     clearInterval(intervalID);
+    // }, 500);
 };
 const startDrawing = (event) => {
     isMouseDown = true;
 
     [x, y] = [event.offsetX, event.offsetY];
-    _intervalID = setInterval(() => {
-        convertCanvasToJSON();
-    }, 100);
-    intervalID = setInterval(() => {
-        fetchPrediction(jsonData);
-    }, 500);
+    // _intervalID = setInterval(() => {
+    //     convertCanvasToJSON();
+    // }, 100);
+    // intervalID = setInterval(() => {
+    //     fetchPrediction(jsonData);
+    // }, 150);
 };
 
 const drawLine = (event) => {
@@ -52,9 +54,14 @@ canvas.addEventListener("mouseout", stopDrawing);
 
 jQuery(".clear").on("click", function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    clearInterval(_intervalID);
-    clearInterval(intervalID);
-    jQuery("#prediction").html("---");
+    // clearInterval(_intervalID);
+    //clearInterval(intervalID);
+    //jQuery("#prediction").html("---");
+});
+
+jQuery(".green").on("click", function () {
+    convertCanvasToJSON();
+    fetchPrediction(jsonData);
 });
 
 const convertCanvasToJSON = () => {
@@ -87,12 +94,24 @@ const convertCanvasToJSON = () => {
 
 const fetchPrediction = (jsonData) => {
     $.ajax({
-        url: "http://haidousm.pythonanywhere.com/predict",
+        url: "http://0.0.0.0:5000/predict",
         type: "post",
         data: jsonData,
 
         success: function (response) {
-            jQuery("#prediction").html(response);
+            let confidences = JSON.parse("[" + response + "]");
+            let prediction = confidences.shift();
+            jQuery("#prediction").html(prediction);
+
+            jQuery.each(jQuery(".conf-score"), function (index, elem) {
+                let percentage = (confidences[index] * 100).toPrecision(8);
+                jQuery(elem).animate(
+                    {
+                        width: 3 + percentage * 1.3 + "px",
+                    },
+                    300
+                );
+            });
         },
     });
 };
