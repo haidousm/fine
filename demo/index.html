@@ -10,25 +10,33 @@
                 margin: 0px;
             }
             canvas {
-                border: 1px solid #000;
-                background-color: #000;
+                background-color: rgb(30, 30, 30);
+                position: absolute;
             }
             body {
                 background-color: rgba(0, 0, 0, 0.75);
             }
+            .instructions {
+                width: 500px;
+                height: 100px;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
             .terminal-container {
                 background-color: rgb(30, 30, 30);
-                width: 600px;
-                height: 400px;
+                width: 500px;
+                height: 500px;
                 margin: 0 auto;
-                margin-top: 100px;
+
                 border: 1px solid rgb(71, 71, 71);
                 border-radius: 5px;
 
                 color: white;
-                overflow: auto;
+
                 font-size: 14px;
                 box-shadow: 0 0 12px #000;
+
+                position: relative;
             }
 
             .mac-terminal-top-bar {
@@ -38,6 +46,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                position: absolute;
+                z-index: 10;
+            }
+
+            .column-flex {
+                display: flex;
+                flex-direction: column;
             }
 
             .btn-container {
@@ -80,9 +95,30 @@
                 font-family: Menlo, Monaco, Consolas, "Liberation Mono",
                     "Courier New", monospace;
             }
+
+            #prediction {
+                user-select: none;
+            }
+
+            .instructions-btn-container {
+            }
         </style>
     </head>
     <body>
+        <div class="instructions">
+            <div class="btn-container column-flex">
+                <div class="instructions-btn-container">
+                    <button
+                        onclick="window.location.href='https://haidousm.com/';"
+                        class="top-bar-btn red"
+                    ></button>
+                    <p><- Exit</p>
+                </div>
+                <div class="instructions-btn-container">
+                    <button class="top-bar-btn yellow clear"></button>
+                </div>
+            </div>
+        </div>
         <div class="terminal-container">
             <div class="mac-terminal-top-bar">
                 <div class="btn-container">
@@ -100,7 +136,7 @@
                     <button class="top-bar-btn green"></button>
                 </div>
             </div>
-            <canvas width="600px" ; height="400px"></canvas>
+            <canvas width="498px" height="498px"></canvas>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
