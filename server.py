@@ -1,7 +1,8 @@
-
 import cv2
 import numpy as np
 import pyparsing
+
+import matplotlib.pyplot as plt
 
 from utils.Model import Model
 from datetime import timedelta
@@ -17,9 +18,7 @@ def crossdomain(origin=None, methods=None, headers=None, max_age=21600,
     """
     if methods is not None:
         methods = ', '.join(sorted(x.upper() for x in methods))
-    # use str instead of basestring if using Python 3.x
-    if headers is not None and not isinstance(headers, basestring):
-        headers = ', '.join(x.upper() for x in headers)
+
     # use str instead of basestring if using Python 3.x
     if not isinstance(origin, pyparsing.basestring):
         origin = ', '.join(origin)
@@ -72,7 +71,7 @@ app = Flask(__name__)
 
 def load_model():
     global model
-    model = Model.load("trained_models/digits_mnist.model")
+    model = Model.load("trained_models/digits_mnist_rot.model")
 
 
 @app.route('/')
@@ -90,8 +89,13 @@ def get_prediction():
         image_data = image_data.reshape((1, -1))
         confidences = model.predict(image_data)
         prediction = model.output_layer_activation.predictions(confidences)
+        res = ""
+        res += str(prediction[0])
+        _confidences = confidences.tolist()[0]
+        for i in range(len(_confidences)):
+            res += "," + str(_confidences[i])
 
-    return str(prediction[0])
+    return res
 
 
 if __name__ == '__main__':
