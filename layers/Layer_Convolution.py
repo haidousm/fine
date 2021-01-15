@@ -7,7 +7,7 @@ class Layer_Convolution:
     def __init__(self, n_kernels, kernel_shape, padding, stride,
                  weight_regularizer_l1=0., weight_regularizer_l2=0.,
                  bias_regularizer_l1=0., bias_regularizer_l2=0.):
-        self.weights = 0.01 * np.random.randn(n_kernels, 1, *kernel_shape)
+        self.weights = 0.01 * np.random.randn(n_kernels, *kernel_shape)
         self.biases = 0.01 * np.random.randn(n_kernels)
         self.padding = padding
         self.stride = stride
