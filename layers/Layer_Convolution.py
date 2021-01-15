@@ -32,20 +32,26 @@ class Layer_Convolution:
 
         output = np.zeros((n_inputs, n_kernels, output_height, output_width))
 
-        for inp_index in range(n_inputs):
-            for kern_index in range(n_kernels):
-                for i in range(output_height):
-                    for j in range(output_width):
-                        for c in range(n_channels):
-                            output[inp_index, kern_index, i, j] = (self.weights[kern_index] * padded_input[inp_index,
-                                                                                              c,
-                                                                                              i: i + kernel_height,
-                                                                                              j: j + kernel_width]).sum() + \
-                                                                  self.biases[
-                                                                      kern_index]
+        for i in range(output_height):
+            for j in range(output_width):
+                h_start = i * stride
+                h_end = h_start + kernel_height
+                w_start = j * stride
+                w_end = w_start + kernel_width
+
+                a = padded_input[:, np.newaxis, :, h_start:h_end, w_start:w_end]
+                b = self.weights[np.newaxis, :, :, :, :]
+                # print(a.shape)
+                # print(b.shape)
+                ab = (a * b).sum((2, 3, 4))
+                output[:, :, i, j] = ab
+                # output[:, :, i, j] = np.sum(
+                #     padded_input[:, :, h_start:h_end, w_start:w_end, np.newaxis] *
+                #     self.weights[np.newaxis, :, :, :],
+                #     axis=(2, 3, 4)
+                # )
 
         self.output = output
-
 
     def backward(self, dvalues):
 
@@ -56,47 +62,33 @@ class Layer_Convolution:
         n_kernels, _, kernel_height, kernel_width = self.weights.shape
         _, _, dvalue_height, dvalue_width = dvalues.shape
 
-        self.dbiases = np.sum(dvalues, axis=(0, 2, 3))
+        self.dbiases = np.sum(dvalues, axis=(0, 2, 3)) / n_inputs
 
         input_padded = np.pad(self.inputs, ((0, 0), (0, 0), (padding, padding), (padding, padding)), 'constant')
 
-        dweights_height = int(1 + (input_height + 2 * padding - dvalue_height) / stride)
-        dweights_width = int(1 + (input_width + 2 * padding - dvalue_width) / stride)
+        dweights = np.zeros_like(self.weights)
+        dinputs = np.zeros_like(input_padded)
+        for i in range(dvalue_height):
+            for j in range(dvalue_width):
+                h_start = i * stride
+                h_end = h_start + kernel_height
+                w_start = j * stride
+                w_end = w_start + kernel_width
 
-        dweights = np.zeros((n_kernels, n_channels, dweights_height, dweights_width))
-        for inp_index in range(n_inputs):
-            for kern_index in range(n_kernels):
-                for i in range(dweights_height):
-                    for j in range(dweights_width):
-                        for c in range(n_channels):
-                            dweights[kern_index, c, i, j] = (
-                                    dvalues[inp_index, kern_index] + input_padded[inp_index,
-                                                                     c,
-                                                                     i: i + dvalue_height,
-                                                                     j: j + dvalue_width]).sum()
+                dinputs[:, :, h_start:h_end, w_start:w_end] += np.sum(
+                    self.weights[np.newaxis, :, :, :, :] *
+                    dvalues[:, :, i:i + 1, j:j + 1, np.newaxis],
+                    axis=1
+                )
 
-        self.dweights = dweights
+                a = input_padded[:, :, h_start:h_end, w_start:w_end]
+                b = dvalues[:, :, i:i + 1, j:j + 1]
+                ab = (a * b).sum(axis=0)
+                ab = np.expand_dims(ab, axis=1)
 
-        dinputs = np.zeros_like(self.inputs)
-        dinputs_padded = np.pad(dinputs, ((0, 0),  (0, 0), (padding, padding), (padding, padding)), 'constant')
+                dweights += ab
 
-        dvalues_padded = np.pad(dvalues, ((0, 0), (0, 0), (kernel_width - 1, kernel_width - 1), (kernel_height - 1, kernel_height - 1)), 'constant')
-
-        weights_inverted = np.zeros_like(self.weights)
-        for i in range(kernel_height):
-            for j in range(kernel_width):
-                weights_inverted[:, :, i, j] = self.weights[:, :, kernel_height - i - 1, kernel_width - i - 1]
-
-        for inp_index in range(n_inputs):
-            for kern_index in range(n_kernels):
-                for i in range(input_height + 2 * padding):
-                    for j in range(input_width + 2 * padding):
-                        for k in range(kernel_height):
-                            for l in range(kernel_width):
-                                for c in range(n_channels):
-                                    dinputs_padded[inp_index, c, i, j] += \
-                                        dvalues_padded[inp_index, kern_index, i + k, j + l] * \
-                                        weights_inverted[kern_index, c, k, l]
-
-        dinputs = dinputs_padded[:, :, padding:-padding, padding:-padding]
-        self.dinputs = dinputs
+        self.dweights = dweights / n_inputs
+        self.dinputs = dinputs[:, :, padding:padding + input_height, padding:padding + input_width]
+        # plt.imshow(self.inputs[0, 0], cmap="gray")
+        # plt.show()
