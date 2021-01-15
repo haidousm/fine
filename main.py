@@ -2,8 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets.MNIST_Data import mnist_data
 from layers.Layer_Convolution import Layer_Convolution
-from layers.Layer_Dense import Layer_Dense
+from layers.Layer_MaxPooling import Layer_MaxPooling
+from layers.Layer_Dropout import Layer_Dropout
 from layers.Layer_Flatten import Layer_Flatten
+from layers.Layer_Dense import Layer_Dense
 from activation_functions.Activation_ReLU import Activation_ReLU
 from activation_functions.Activation_Softmax import Activation_Softmax
 from loss_functions.Loss_CategoricalCrossEntropy import Loss_CategoricalCrossEntropy
@@ -18,18 +20,34 @@ X = np.expand_dims(X, axis=1)
 
 X = np.array([image.astype(np.float32) / 255 for image in X])
 
-X = X[:10000]
-y = y[:10000]
+X = X[:1000]
+y = y[:1000]
 
 model = Model()
 
-model.add(Layer_Convolution(5, (3, 3), 1, 1))
+# (:, 1, 28, 28)
+model.add(Layer_Convolution(32, (1, 3, 3), 1, 1))
 model.add(Activation_ReLU())
+
+# (:, 32, 28, 28)
+model.add(Layer_Convolution(32, (32, 3, 3), 1, 1))
+model.add(Activation_ReLU())
+
+# (:, 32, 28, 28)
+model.add(Layer_MaxPooling((2, 2)))
+
+# (:, 32, 14, 14)
+model.add(Layer_Dropout(0.75))
+
+# (:, 32, 14, 14)
 model.add(Layer_Flatten())
-model.add(Layer_Dense(3920, 128))
+
+# (:, 6272)
+model.add(Layer_Dense(6272, 256))
 model.add(Activation_ReLU())
-model.add(Layer_Dense(128, 10))
+model.add(Layer_Dense(256, 32))
 model.add(Activation_ReLU())
+model.add(Layer_Dense(32, 10))
 model.add(Activation_Softmax())
 
 model.set(loss=Loss_CategoricalCrossEntropy(),
@@ -43,7 +61,3 @@ model.train(X, y,
             print_every=1)
 
 
-# confidences = model.predict(X_test[:5])
-# predictions = model.output_layer_activation.predictions(confidences)
-# print(predictions)
-# print(y_test[:5])
