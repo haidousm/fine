@@ -23,9 +23,10 @@ y = y[:10000]
 
 model = Model()
 
-model.add(Layer_Convolution(32, (3, 3), 1, 1))
-model.add(Activation_ReLU())
-model.add(Layer_Convolution(32, (3, 3), 1, 1))
+n_kernels = 32
+
+
+model.add(Layer_Convolution(5, (3, 3), 1, 1))
 model.add(Activation_ReLU())
 model.add(Layer_Flatten())
 model.add(Layer_Dense(3920, 128))

@@ -4,7 +4,6 @@ class Layer_Flatten:
 
     def forward(self, inputs, training):
         self.shape = inputs.shape
-        print(self.shape)
         self.output = np.reshape(inputs, (inputs.shape[0], -1))
 
     def backward(self, dvalues):
