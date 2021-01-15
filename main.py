@@ -20,8 +20,21 @@ X = np.expand_dims(X, axis=1)
 
 X = np.array([image.astype(np.float32) / 255 for image in X])
 
-X = X[:1000]
-y = y[:1000]
+# conv = Layer_Convolution(10, (1, 3, 3), 1, 1)
+# conv.forward(X, training=True)
+# # conv.backward(conv.output)
+# # print(conv.dinputs.shape)
+#
+# plt.imshow(conv.output[0, 0], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 1], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 2], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 3], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 4], cmap="gray")
+# plt.show()
 
 model = Model()
 
@@ -36,14 +49,14 @@ model.add(Activation_ReLU())
 # (:, 32, 28, 28)
 model.add(Layer_MaxPooling((2, 2)))
 
-# (:, 32, 14, 14)
-model.add(Layer_Dropout(0.75))
+# # (:, 32, 14, 14)
+# model.add(Layer_Dropout(0.75))
 
 # (:, 32, 14, 14)
 model.add(Layer_Flatten())
 
 # (:, 6272)
-model.add(Layer_Dense(6272, 256))
+model.add(Layer_Dense(32 * 28 * 28, 256))
 model.add(Activation_ReLU())
 model.add(Layer_Dense(256, 32))
 model.add(Activation_ReLU())
@@ -58,6 +71,6 @@ model.finalize()
 model.train(X, y,
             epochs=1,
             batch_size=128,
-            print_every=1)
+            print_every=100)
 
 
