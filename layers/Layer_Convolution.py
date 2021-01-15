@@ -3,13 +3,20 @@ import numpy as np
 
 class Layer_Convolution:
 
-    def __init__(self, n_kernels, kernel_shape, padding, stride):
+    def __init__(self, n_kernels, kernel_shape, padding, stride,
+                 weight_regularizer_l1=0., weight_regularizer_l2=0.,
+                 bias_regularizer_l1=0., bias_regularizer_l2=0.):
         self.weights = 0.01 * np.random.randn(n_kernels, *kernel_shape, 1)
         self.biases = 0.01 * np.random.randn(n_kernels)
         self.padding = padding
         self.stride = stride
 
-    def forward(self, inputs):
+        self.weight_regularizer_l1 = weight_regularizer_l1
+        self.weight_regularizer_l2 = weight_regularizer_l2
+        self.bias_regularizer_l1 = bias_regularizer_l1
+        self.bias_regularizer_l2 = bias_regularizer_l2
+
+    def forward(self, inputs, training):
 
         self.inputs = inputs
         padding = self.padding
