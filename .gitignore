@@ -39,3 +39,8 @@ pip-delete-this-directory.txt
 .cache
 nosetests.xml
 coverage.xml
+
+main.py
+server.py
+demo/
+requirements
