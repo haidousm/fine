@@ -14,7 +14,7 @@ python3 -m pip install -r requirements.txt
 ```
 
 ## <a name="demo"></a> Demo
-### [MNIST Demo Link](https://haidousm.com/liras-mnist-demo/)
+### [MNIST Demo Link](https://haidousm.com/fine-mnist-demo/)
 Demo was built using javascript for the frontend and a flask server to serve predictions from model.
 
 Demo model creation & training:
@@ -82,5 +82,5 @@ model.evaluate(X_test, y_test, batch_size=128)
 - [X] Mean Squared Error
 
 ### Optimizers
-- [X] Stochastic Gradient Descent with rate decay and momentum
+- [X] Stochastic Gradient Descent (SGD) with rate decay and momentum
 - [ ] Adaptive Moment Estimation (ADAM)
