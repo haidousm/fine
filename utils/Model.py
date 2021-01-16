@@ -1,5 +1,8 @@
+import time
+
 import numpy as np
 import pickle, copy
+import matplotlib.pyplot as plt
 
 from layers.Layer_Input import Layer_Input
 
@@ -78,6 +81,7 @@ class Model:
 
             for step in range(train_steps):
 
+                start_time = time.time()
                 if batch_size is None:
                     batch_X = X
                     batch_y = y
@@ -109,7 +113,8 @@ class Model:
                           f'loss: {loss:.3f} (' +
                           f'data_loss: {data_loss:.3f}, ' +
                           f'reg_loss: {regularization_loss:.3f}), ' +
-                          f'lr: {self.optimizer.current_learning_rate}')
+                          f'lr: {self.optimizer.current_learning_rate}, ' +
+                          f't: {round(time.time() - start_time, 2)}')
 
             epoch_data_loss, epoch_regularization_loss = \
                 self.loss.calculate_accumulated(
@@ -122,7 +127,7 @@ class Model:
                   f'loss: {epoch_loss:.3f} (' +
                   f'data_loss: {epoch_data_loss:.3f}, ' +
                   f'reg_loss: {epoch_regularization_loss:.3f}), ' +
-                  f'lr: {self.optimizer.current_learning_rate}')
+                  f'lr: {self.optimizer.current_learning_rate}' )
 
             if validation_data is not None:
                 self.evaluate(*validation_data, batch_size=batch_size)
@@ -138,6 +143,7 @@ class Model:
         self.loss.new_pass()
         self.accuracy.new_pass()
         for step in range(validation_steps):
+
             if batch_size is None:
                 batch_X = X_val
                 batch_y = y_val
@@ -161,7 +167,8 @@ class Model:
 
         print(f'validation, ' +
               f'acc: {validation_accuracy:.3f}, '
-              + f'loss: {validation_loss:.3f}')
+              + f'loss: {validation_loss:.3f}'
+              )
 
     def predict(self, X, *, batch_size=None):
         prediction_steps = 1
