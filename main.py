@@ -1,51 +1,76 @@
 import numpy as np
-import cv2
 import matplotlib.pyplot as plt
-import tkinter as tk
-from utils.ImageGenerator import ImageGenerator
-
-from datasets.Spiral_Data import spiral_data
 from datasets.MNIST_Data import mnist_data
-from utils.Model import Model
-
+from layers.Layer_Convolution import Layer_Convolution
+from layers.Layer_MaxPooling import Layer_MaxPooling
+from layers.Layer_Dropout import Layer_Dropout
+from layers.Layer_Flatten import Layer_Flatten
 from layers.Layer_Dense import Layer_Dense
-
 from activation_functions.Activation_ReLU import Activation_ReLU
 from activation_functions.Activation_Softmax import Activation_Softmax
-
 from loss_functions.Loss_CategoricalCrossEntropy import Loss_CategoricalCrossEntropy
 
 from optimizers.Optimizer_SGD import Optimizer_SGD
 
+from utils.Model import Model
 from utils.accuracy.Accuracy_Categorical import Accuracy_Categorical
 
-np.set_printoptions(linewidth=200)
 X, y, X_test, y_test = mnist_data()
-print(X[0].tolist())
+X = np.expand_dims(X, axis=1)
 
 X = np.array([image.astype(np.float32) / 255 for image in X])
-X_test = np.array([image.astype(np.float32) / 255 for image in X_test])
 
-X = X.reshape(X.shape[0], -1)
-X_test = X_test.reshape(X_test.shape[0], -1)
+# conv = Layer_Convolution(10, (1, 3, 3), 1, 1)
+# conv.forward(X, training=True)
+# # conv.backward(conv.output)
+# # print(conv.dinputs.shape)
+#
+# plt.imshow(conv.output[0, 0], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 1], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 2], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 3], cmap="gray")
+# plt.show()
+# plt.imshow(conv.output[0, 4], cmap="gray")
+# plt.show()
 
-MoussaNet = Model.load("trained_models/digits_mnist.model")
+model = Model()
 
-canvas = tk.Tk()
-canvas.wm_geometry("%dx%d+%d+%d" % (400, 400, 10, 10))
-canvas.config(bg='white')
-image_gen = ImageGenerator(canvas, 10, 10)
+# (:, 1, 28, 28)
+model.add(Layer_Convolution(32, (1, 3, 3), 1, 1))
+model.add(Activation_ReLU())
 
-while True:
-    if image_gen.is_new_image:
+# (:, 32, 28, 28)
+model.add(Layer_Convolution(32, (32, 3, 3), 1, 1))
+model.add(Activation_ReLU())
 
-        image_data = 255 - np.array(image_gen.image)
-        image_data = image_data.reshape(1, -1).astype(np.float32) / 255
-        # plt.imshow(image_data.reshape(28, 28))
-        # plt.show()
-        confidences = MoussaNet.predict(image_data)
-        prediction = MoussaNet.output_layer_activation.predictions(confidences)
-        image_gen.prediction.set(f"Prediction: {prediction}")
-        image_gen.is_new_image = False
-    canvas.update_idletasks()
-    canvas.update()
+# (:, 32, 28, 28)
+model.add(Layer_MaxPooling((2, 2)))
+
+# # (:, 32, 14, 14)
+# model.add(Layer_Dropout(0.75))
+
+# (:, 32, 14, 14)
+model.add(Layer_Flatten())
+
+# (:, 6272)
+model.add(Layer_Dense(32 * 28 * 28, 256))
+model.add(Activation_ReLU())
+model.add(Layer_Dense(256, 32))
+model.add(Activation_ReLU())
+model.add(Layer_Dense(32, 10))
+model.add(Activation_Softmax())
+
+model.set(loss=Loss_CategoricalCrossEntropy(),
+          optimizer=Optimizer_SGD(),
+          accuracy=Accuracy_Categorical())
+
+model.finalize()
+model.train(X, y,
+            epochs=1,
+            batch_size=128,
+            print_every=100)
+
+
