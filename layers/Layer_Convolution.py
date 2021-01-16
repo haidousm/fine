@@ -88,7 +88,7 @@ class Layer_Convolution:
 
                 dweights += ab
 
-        self.dweights = dweights / n_inputs
+        self.dweights = dweights * 0.7
         self.dinputs = dinputs[:, :, padding:padding + input_height, padding:padding + input_width]
         # plt.imshow(self.inputs[0, 0], cmap="gray")
         # plt.show()

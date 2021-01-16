@@ -29,8 +29,13 @@ class Optimizer_SGD:
             weight_updates = -self.current_learning_rate * layer.dweights
             bias_updates = -self.current_learning_rate * layer.dbiases
 
-        layer.weights += weight_updates
-        layer.biases += bias_updates
+        if(hasattr(layer, '_w')):
+            layer._w += weight_updates
+            layer._w += bias_updates
+        else:
+
+            layer.weights += weight_updates
+            layer.biases += bias_updates
 
     def post_update_params(self):
         self.iterations += 1
