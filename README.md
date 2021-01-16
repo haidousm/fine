@@ -9,7 +9,7 @@ A keras-like neural network framework built purely using Python and Numpy that's
 ## <a name="how-to-use"></a> How to use
 
 ## <a name="demo"></a> Demo
-### <a href="https//haidousm.com/liras-mnist-demo"></a> MNIST Demo
+### [MNIST Demo Link](https://haidousm.com/liras-mnist-demo/)
 Demo was built using javascript for the frontend and a flask server to serve predictions from model.
 
 Demo model creation & training:
