@@ -7,6 +7,10 @@ A keras-like neural network framework built purely using Python and Numpy that's
 [3- Technical Specifications](#technical)
 
 ## <a name="how-to-use"></a> How to use
+```
+git clone git@github.com:haidousm/fine.git
+cd fine
+python3 -m pip install -r requirements.txt
 
 ## <a name="demo"></a> Demo
 ### [MNIST Demo Link](https://haidousm.com/liras-mnist-demo/)
