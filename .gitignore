@@ -5,6 +5,8 @@ data/
 __pycache__/
 .idea/
 
+trained_models/
+
 .DS_Store
 
 # Byte-compiled / optimized / DLL files
