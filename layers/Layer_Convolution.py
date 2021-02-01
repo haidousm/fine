@@ -41,15 +41,9 @@ class Layer_Convolution:
 
                 a = padded_input[:, np.newaxis, :, h_start:h_end, w_start:w_end]
                 b = self.weights[np.newaxis, :, :, :, :]
-                # print(a.shape)
-                # print(b.shape)
+
                 ab = (a * b).sum((2, 3, 4))
                 output[:, :, i, j] = ab
-                # output[:, :, i, j] = np.sum(
-                #     padded_input[:, :, h_start:h_end, w_start:w_end, np.newaxis] *
-                #     self.weights[np.newaxis, :, :, :],
-                #     axis=(2, 3, 4)
-                # )
 
         self.output = output
 
@@ -90,5 +84,4 @@ class Layer_Convolution:
 
         self.dweights = dweights * 0.7
         self.dinputs = dinputs[:, :, padding:padding + input_height, padding:padding + input_width]
-        # plt.imshow(self.inputs[0, 0], cmap="gray")
-        # plt.show()
+
