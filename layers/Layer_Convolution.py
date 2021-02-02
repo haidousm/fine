@@ -1,4 +1,5 @@
 import numpy as np
+from numba import njit
 import matplotlib.pyplot as plt
 
 
@@ -7,7 +8,7 @@ class Layer_Convolution:
     def __init__(self, n_kernels, kernel_shape, padding, stride,
                  weight_regularizer_l1=0., weight_regularizer_l2=0.,
                  bias_regularizer_l1=0., bias_regularizer_l2=0.):
-        self.weights = 0.01 * np.random.randn(n_kernels, *kernel_shape)
+        self.weights = 0.01 * np.random.randn(n_kernels, *kernel_shape).astype(np.float32)
         self.biases = 0.01 * np.random.randn(n_kernels)
         self.padding = padding
         self.stride = stride
@@ -22,30 +23,10 @@ class Layer_Convolution:
         self.inputs = inputs
         padding = self.padding
         stride = self.stride
-        n_inputs, n_channels, input_height, input_width, = self.inputs.shape
-        n_kernels, _, kernel_height, kernel_width = self.weights.shape
-
-        output_height = int(1 + (input_height + 2 * padding - kernel_height) / stride)
-        output_width = int(1 + (input_width + 2 * padding - kernel_width) / stride)
 
         padded_input = np.pad(inputs, ((0, 0), (0, 0), (padding, padding), (padding, padding)), 'constant')
 
-        output = np.zeros((n_inputs, n_kernels, output_height, output_width))
-
-        for i in range(output_height):
-            for j in range(output_width):
-                h_start = i * stride
-                h_end = h_start + kernel_height
-                w_start = j * stride
-                w_end = w_start + kernel_width
-
-                a = padded_input[:, np.newaxis, :, h_start:h_end, w_start:w_end]
-                b = self.weights[np.newaxis, :, :, :, :]
-
-                ab = (a * b).sum((2, 3, 4))
-                output[:, :, i, j] = ab
-
-        self.output = output
+        self.output = self.convolve(inputs, self.weights, padded_input, padding, stride)
 
     def backward(self, dvalues):
 
@@ -85,3 +66,29 @@ class Layer_Convolution:
         self.dweights = dweights * 0.7
         self.dinputs = dinputs[:, :, padding:padding + input_height, padding:padding + input_width]
 
+    @staticmethod
+    def convolve(inputs, weights, padded_input, padding, stride):
+
+        n_inputs, n_channels, input_height, input_width, = inputs.shape
+        n_kernels, _, kernel_height, kernel_width = weights.shape
+
+        output_height = int(1 + (input_height + 2 * padding - kernel_height) / stride)
+        output_width = int(1 + (input_width + 2 * padding - kernel_width) / stride)
+
+        output = np.zeros((n_inputs, n_kernels, output_height, output_width))
+        for i in range(output_height):
+            for j in range(output_width):
+                h_start = i * stride
+                h_end = h_start + kernel_height
+                w_start = j * stride
+                w_end = w_start + kernel_width
+
+                a = padded_input[:, :, h_start:h_end, w_start:w_end].copy()
+
+                b = weights[:, :, :, :].copy()
+                output[:, :, i, j] = np.sum(np.reshape(a,
+                                                       (n_inputs, 1, n_channels, kernel_height, kernel_width))
+                                            * np.reshape(b,
+                                                         (1, n_kernels, _, kernel_height, kernel_width)),
+                                            axis=(2, 3, 4))
+        return output

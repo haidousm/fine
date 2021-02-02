@@ -1,3 +1,4 @@
+import gzip
 import time
 
 import numpy as np
@@ -251,12 +252,12 @@ class Model:
                              'dweights', 'dbiases']:
                 layer.__dict__.pop(property, None)
 
-        with open(path, 'wb') as f:
+        with gzip.open(path, 'wb') as f:
             pickle.dump(model, f)
 
     @staticmethod
     def load(path):
 
-        with open(path, 'rb') as f:
+        with gzip.open(path, 'rb') as f:
             model = pickle.load(f)
             return model
