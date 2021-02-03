@@ -1,7 +1,7 @@
 import numpy as np
 
-def get_im2col_indices(x_shape, field_height, field_width, padding=1, stride=1):
 
+def get_im2col_indices(x_shape, field_height, field_width, padding=1, stride=1):
     N, C, H, W = x_shape
     assert (H + 2 * padding - field_height) % stride == 0
     assert (W + 2 * padding - field_height) % stride == 0
@@ -31,9 +31,9 @@ def im2col(x, field_height, field_width, padding=1, stride=1):
     cols = cols.transpose(1, 2, 0).reshape(field_height * field_width * C, -1)
     return cols
 
+
 def col2im(cols, x_shape, field_height=3, field_width=3, padding=1,
-                   stride=1):
-    """ An implementation of col2im based on fancy indexing and np.add.at """
+           stride=1):
     N, C, H, W = x_shape
     H_padded, W_padded = H + 2 * padding, W + 2 * padding
     x_padded = np.zeros((N, C, H_padded, W_padded), dtype=cols.dtype)
@@ -46,5 +46,5 @@ def col2im(cols, x_shape, field_height=3, field_width=3, padding=1,
         return x_padded
     return x_padded[:, :, padding:-padding, padding:-padding]
 
-pass
 
+pass
