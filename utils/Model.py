@@ -1,3 +1,4 @@
+import gzip
 import time
 
 import numpy as np
@@ -79,9 +80,9 @@ class Model:
             self.loss.new_pass()
             self.accuracy.new_pass()
 
+            start_time = time.time()
             for step in range(train_steps):
 
-                start_time = time.time()
                 if batch_size is None:
                     batch_X = X
                     batch_y = y
@@ -115,6 +116,7 @@ class Model:
                           f'reg_loss: {regularization_loss:.3f}), ' +
                           f'lr: {self.optimizer.current_learning_rate}, ' +
                           f't: {round(time.time() - start_time, 2)}')
+                    start_time = time.time()
 
             epoch_data_loss, epoch_regularization_loss = \
                 self.loss.calculate_accumulated(
@@ -251,12 +253,12 @@ class Model:
                              'dweights', 'dbiases']:
                 layer.__dict__.pop(property, None)
 
-        with open(path, 'wb') as f:
+        with gzip.open(path, 'wb') as f:
             pickle.dump(model, f)
 
     @staticmethod
     def load(path):
 
-        with open(path, 'rb') as f:
+        with gzip.open(path, 'rb') as f:
             model = pickle.load(f)
             return model
