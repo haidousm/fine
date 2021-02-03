@@ -2,6 +2,7 @@ import numpy as np
 
 from loss_functions.Loss import Loss
 
+
 class Loss_CategoricalCrossEntropy(Loss):
 
     def forward(self, y_pred, y_true):
@@ -21,6 +22,7 @@ class Loss_CategoricalCrossEntropy(Loss):
                 axis=1)
 
         negative_log_likelihoods = -np.log(correct_confidences)
+
         return negative_log_likelihoods
 
     def backward(self, dvalues, y_true):
