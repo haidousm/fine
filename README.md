@@ -67,8 +67,8 @@ model.evaluate(X_test, y_test, batch_size=128)
 - [X] Dense Layer
 - [X] Dropout Layer
 - [X] Flatten Layer
-- [X] 2D Convolutional Layer
-- [X] Max Pool Layer
+- [ ] 2D Convolutional Layer
+- [ ] Max Pool Layer
 
 ### Activation Functions
 - [X] Rectified Linear (ReLU)
@@ -83,4 +83,4 @@ model.evaluate(X_test, y_test, batch_size=128)
 
 ### Optimizers
 - [X] Stochastic Gradient Descent (SGD) with rate decay and momentum
-- [X] Adaptive Moment Estimation (ADAM)
+- [ ] Adaptive Moment Estimation (ADAM)
