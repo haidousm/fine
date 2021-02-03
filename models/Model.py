@@ -1,23 +1,26 @@
+import copy
 import gzip
+import pickle
 import time
 
 import numpy as np
-import pickle, copy
-import matplotlib.pyplot as plt
 
-from layers.Layer_Input import Layer_Input
+from models.model_utils.Layer_Input import Layer_Input
 
 
 class Model:
 
-    def __init__(self):
-        self.layers = []
+    def __init__(self, layers):
+
+        self.layers = layers
         self.softmax_classifier_output = None
 
     def add(self, layer):
+
         self.layers.append(layer)
 
     def set(self, *, loss, optimizer, accuracy):
+
         if loss is not None:
             self.loss = loss
         if optimizer is not None:
@@ -30,22 +33,25 @@ class Model:
         self.input_layer = Layer_Input()
 
         layer_count = len(self.layers)
-
         self.trainable_layers = []
 
         for i in range(layer_count):
 
             if i == 0:
+
                 self.layers[i].prev = self.input_layer
                 self.layers[i].next = self.layers[i + 1]
 
             elif i < layer_count - 1:
+
                 self.layers[i].prev = self.layers[i - 1]
                 self.layers[i].next = self.layers[i + 1]
 
             else:
+
                 self.layers[i].prev = self.layers[i - 1]
                 self.layers[i].next = self.loss
+
                 self.output_layer_activation = self.layers[i]
 
             if hasattr(self.layers[i], 'weights'):
@@ -54,11 +60,13 @@ class Model:
         if self.loss is not None:
             self.loss.remember_trainable_layers(self.trainable_layers)
 
-    def train(self, X, y, *, epochs=1, batch_size=None, print_every=1,
+    def train(self, X, y, *, epochs=1,
+              batch_size=None, print_every=1,
               validation_data=None):
 
         self.accuracy.init(y)
         train_steps = 1
+
         if validation_data is not None:
             validation_steps = 1
             X_val, y_val = validation_data
@@ -68,6 +76,7 @@ class Model:
 
             if train_steps * batch_size < len(X):
                 train_steps += 1
+
             if validation_data is not None:
                 validation_steps = len(X_val) // batch_size
                 if validation_steps * batch_size < len(X_val):
@@ -75,31 +84,30 @@ class Model:
 
         for epoch in range(1, epochs + 1):
 
-            print(f'epoch: {epoch}')
-
             self.loss.new_pass()
             self.accuracy.new_pass()
-
-            start_time = time.time()
+            epoch_start_time = time.process_time()
             for step in range(train_steps):
 
+                step_start_time = time.process_time()
                 if batch_size is None:
+
                     batch_X = X
                     batch_y = y
+
                 else:
+
                     batch_X = X[step * batch_size:(step + 1) * batch_size]
                     batch_y = y[step * batch_size:(step + 1) * batch_size]
 
                 output = self.forward(batch_X, training=True)
 
-                data_loss, regularization_loss = \
-                    self.loss.calculate(output, batch_y,
-                                        include_regularization=True)
+                data_loss = self.loss.calculate(output, batch_y)
 
-                loss = data_loss + regularization_loss
+                loss = data_loss
+
                 predictions = self.output_layer_activation.predictions(output)
-                accuracy = self.accuracy.calculate(predictions,
-                                                   batch_y)
+                accuracy = self.accuracy.calculate(predictions, batch_y)
 
                 self.backward(output, batch_y)
 
@@ -108,35 +116,42 @@ class Model:
                     self.optimizer.update_params(layer)
                 self.optimizer.post_update_params()
 
-                if not step % print_every or step == train_steps - 1:
-                    print(f'step: {step}, ' +
-                          f'acc: {accuracy:.3f}, ' +
-                          f'loss: {loss:.3f} (' +
-                          f'data_loss: {data_loss:.3f}, ' +
-                          f'reg_loss: {regularization_loss:.3f}), ' +
-                          f'lr: {self.optimizer.current_learning_rate}, ' +
-                          f't: {round(time.time() - start_time, 2)}')
-                    start_time = time.time()
+                step_end_time = round(time.process_time() - step_start_time, 2)
 
-            epoch_data_loss, epoch_regularization_loss = \
-                self.loss.calculate_accumulated(
-                    include_regularization=True)
-            epoch_loss = epoch_data_loss + epoch_regularization_loss
+                if not step % print_every and step != 0:
+                    print(
+                        f'epoch: {epoch}' +
+                        f'step: {step}, ' +
+                        f'acc: {accuracy:.3f}, ' +
+                        f'loss: {loss:.3f}, ' +
+                        f'lr: {self.optimizer.current_learning_rate}, ' +
+                        f'time: {step_end_time}s'
+                    )
+
+            epoch_data_loss = self.loss.calculate_accumulated()
+
+            epoch_loss = epoch_data_loss
+
             epoch_accuracy = self.accuracy.calculate_accumulated()
 
-            print(f'training, ' +
-                  f'acc: {epoch_accuracy:.3f}, ' +
-                  f'loss: {epoch_loss:.3f} (' +
-                  f'data_loss: {epoch_data_loss:.3f}, ' +
-                  f'reg_loss: {epoch_regularization_loss:.3f}), ' +
-                  f'lr: {self.optimizer.current_learning_rate}' )
+            epoch_end_time = round(time.process_time() - epoch_start_time, 2)
+
+            print(
+                f'training - epoch {epoch}, ' +
+                f'acc: {epoch_accuracy:.3f}, ' +
+                f'loss: {epoch_loss:.3f} (' +
+                f'data_loss: {epoch_data_loss:.3f}, ' +
+                f'lr: {self.optimizer.current_learning_rate}, ' +
+                f'time: {epoch_end_time}s'
+            )
 
             if validation_data is not None:
                 self.evaluate(*validation_data, batch_size=batch_size)
 
-    def evaluate(self, X_val, y_val, *, batch_size=None):
+    def evaluate(self, X_val, y_val, *, epoch=None, batch_size=None):
         validation_steps = 1
 
+        validation_start_time = time.process_time()
         if batch_size is not None:
             validation_steps = len(X_val) // batch_size
             if validation_steps * batch_size < len(X_val):
@@ -144,6 +159,7 @@ class Model:
 
         self.loss.new_pass()
         self.accuracy.new_pass()
+
         for step in range(validation_steps):
 
             if batch_size is None:
@@ -167,12 +183,22 @@ class Model:
         validation_loss = self.loss.calculate_accumulated()
         validation_accuracy = self.accuracy.calculate_accumulated()
 
-        print(f'validation, ' +
-              f'acc: {validation_accuracy:.3f}, '
-              + f'loss: {validation_loss:.3f}'
-              )
+        validation_end_time = time.process_time() - validation_start_time
+        if epoch is None:
+            print(f'validation, ' +
+                  f'acc: {validation_accuracy:.3f}, ' +
+                  f'loss: {validation_loss:.3f} ' +
+                  f'time: {validation_end_time}s'
+                  )
+        else:
+            print(f'validation - {epoch}, ' +
+                  f'acc: {validation_accuracy:.3f}, ' +
+                  f'loss: {validation_loss:.3f} ' +
+                  f'time: {validation_end_time}s'
+                  )
 
     def predict(self, X, *, batch_size=None):
+
         prediction_steps = 1
 
         if batch_size is not None:
@@ -180,6 +206,7 @@ class Model:
 
             if prediction_steps * batch_size < len(X):
                 prediction_steps += 1
+
         output = []
         for step in range(prediction_steps):
 
@@ -194,6 +221,7 @@ class Model:
         return np.vstack(output)
 
     def forward(self, X, training):
+
         self.input_layer.forward(X, training)
 
         for layer in self.layers:
@@ -202,15 +230,14 @@ class Model:
         return layer.output
 
     def backward(self, output, y):
+
         if self.softmax_classifier_output is not None:
 
             self.softmax_classifier_output.backward(output, y)
-
             self.layers[-1].dinputs = self.softmax_classifier_output.dinputs
 
             for layer in reversed(self.layers[:-1]):
                 layer.backward(layer.next.dinputs)
-
             return
 
         self.loss.backward(output, y)
@@ -228,8 +255,9 @@ class Model:
 
     def set_parameters(self, parameters):
 
-        for parameter_set, layer in zip(parameters,
-                                        self.trainable_layers):
+        for parameter_set, layer in zip(
+                parameters,
+                self.trainable_layers):
             layer.set_parameters(*parameter_set)
 
     def save_parameters(self, path):
@@ -258,7 +286,21 @@ class Model:
 
     @staticmethod
     def load(path):
-
         with gzip.open(path, 'rb') as f:
-            model = pickle.load(f)
+            model = renamed_load(f)
             return model
+
+
+class RenameUnpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        renamed_module = module
+        if module == "utils.Model":
+            renamed_module = "models.Model"
+        if module == "layers.Layer_Input":
+            renamed_module = "models.model_utils.Layer_Input"
+
+        return super(RenameUnpickler, self).find_class(renamed_module, name)
+
+
+def renamed_load(file_obj):
+    return RenameUnpickler(file_obj).load()

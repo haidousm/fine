@@ -1,6 +1,7 @@
 import numpy as np
 
-from utils.accuracy.Accuracy import Accuracy
+from models.model_utils.accuracy.Accuracy import Accuracy
+
 
 class Accuracy_Regression(Accuracy):
     def __init__(self):
@@ -12,4 +13,3 @@ class Accuracy_Regression(Accuracy):
 
     def compare(self, predictions, y):
         return np.absolute(predictions - y) < self.precision
-
