@@ -43,6 +43,6 @@ nosetests.xml
 coverage.xml
 
 main.py
-server.py
+demo/server.py
 demo/
 requirements

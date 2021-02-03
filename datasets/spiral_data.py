@@ -1,10 +1,7 @@
-# Copyright (c) 2015 Andrej Karpathy
-# License: https://github.com/cs231n/cs231n.github.io/blob/master/LICENSE
-# Source: https://cs231n.github.io/neural-networks-case-study/
-
 import numpy as np
 
-def spiral_data(samples, classes):
+
+def load_spiral(samples, classes):
     X = np.zeros((samples * classes, 2))
     y = np.zeros(samples * classes, dtype='uint8')
     for class_number in range(classes):
