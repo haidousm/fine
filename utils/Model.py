@@ -80,9 +80,9 @@ class Model:
             self.loss.new_pass()
             self.accuracy.new_pass()
 
+            start_time = time.time()
             for step in range(train_steps):
 
-                start_time = time.time()
                 if batch_size is None:
                     batch_X = X
                     batch_y = y
@@ -116,6 +116,7 @@ class Model:
                           f'reg_loss: {regularization_loss:.3f}), ' +
                           f'lr: {self.optimizer.current_learning_rate}, ' +
                           f't: {round(time.time() - start_time, 2)}')
+                    start_time = time.time()
 
             epoch_data_loss, epoch_regularization_loss = \
                 self.loss.calculate_accumulated(
