@@ -1,6 +1,8 @@
 import numpy as np
 
+
 class Activation_Softmax:
+
     def forward(self, inputs, training):
         self.inputs = inputs
         exp_values = np.exp(inputs - np.max(inputs, axis=1, keepdims=True))
@@ -16,5 +18,6 @@ class Activation_Softmax:
 
             self.dinputs[index] = np.dot(jacobian_matrix, single_dvalues)
 
-    def predictions(self, outputs):
-        return np.argmax(outputs, axis=1)
+    @staticmethod
+    def predictions(output):
+        return np.argmax(output, axis=1)
