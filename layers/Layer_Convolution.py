@@ -6,7 +6,7 @@ class Layer_Convolution:
 
     def __init__(self,
                  n_kernels, kernel_shape,
-                 padding, stride):
+                 padding=1, stride=1):
         self.weights = 0.01 * np.random.randn(n_kernels, *kernel_shape).astype(np.float32)
         self.biases = np.zeros((n_kernels, 1))
 
@@ -28,7 +28,7 @@ class Layer_Convolution:
 
         self.inputs = inputs
         self.inputs_col = inputs_col
-        self.output = output.reshape(n_kernels, input_height, input_width, n_inputs).transpose(3, 0, 1, 2)
+        self.output = output
 
     def backward(self, dvalues):
         padding = self.padding
@@ -40,7 +40,7 @@ class Layer_Convolution:
 
         inputs_col = self.inputs_col
 
-        dbiases = np.sum(dvalues, axis=(0, 2, 3))
+        dbiases = np.sum(dvalues, axis=(0, 2, 3)) / n_inputs
 
         dvalues = dvalues.transpose(1, 2, 3, 0).reshape(n_kernels, -1)
         dweights = dvalues @ inputs_col.T

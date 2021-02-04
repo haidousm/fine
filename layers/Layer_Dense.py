@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Layer_Dense:
 
     def __init__(self, n_inputs, n_neurons):
@@ -12,9 +11,13 @@ class Layer_Dense:
         self.output = np.dot(inputs, self.weights) + self.biases
 
     def backward(self, dvalues):
+
+        input_transposed = self.inputs.T
+        weights_transposed = self.weights.T
+
         dbiases = np.sum(dvalues, axis=0, keepdims=True)
-        dweights = np.dot(self.inputs.T, dvalues)
-        dinputs = np.dot(dvalues, self.weights.T)
+        dweights = np.dot(input_transposed, dvalues)
+        dinputs = np.dot(dvalues, weights_transposed)
 
         self.dbiases = dbiases
         self.dweights = dweights

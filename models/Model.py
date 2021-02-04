@@ -10,9 +10,10 @@ from models.model_utils.Layer_Input import Layer_Input
 
 class Model:
 
-    def __init__(self, layers):
+    def __init__(self, layers=[], loss=None, optimizer=None, accuracy=None):
 
         self.layers = layers
+        self.set(loss=loss, optimizer=optimizer, accuracy=accuracy)
         self.softmax_classifier_output = None
 
     def add(self, layer):
@@ -61,9 +62,10 @@ class Model:
             self.loss.remember_trainable_layers(self.trainable_layers)
 
     def train(self, X, y, *, epochs=1,
-              batch_size=None, print_every=1,
+              batch_size=None, print_every=None,
               validation_data=None):
 
+        training_start_time = time.time()
         self.accuracy.init(y)
         train_steps = 1
 
@@ -86,10 +88,10 @@ class Model:
 
             self.loss.new_pass()
             self.accuracy.new_pass()
-            epoch_start_time = time.process_time()
+            epoch_start_time = time.time()
+            step_start_time = time.time()
             for step in range(train_steps):
 
-                step_start_time = time.process_time()
                 if batch_size is None:
 
                     batch_X = X
@@ -116,17 +118,18 @@ class Model:
                     self.optimizer.update_params(layer)
                 self.optimizer.post_update_params()
 
-                step_end_time = round(time.process_time() - step_start_time, 2)
-
-                if not step % print_every and step != 0:
-                    print(
-                        f'epoch: {epoch}' +
-                        f'step: {step}, ' +
-                        f'acc: {accuracy:.3f}, ' +
-                        f'loss: {loss:.3f}, ' +
-                        f'lr: {self.optimizer.current_learning_rate}, ' +
-                        f'time: {step_end_time}s'
-                    )
+                if print_every is not None:
+                    if not step % print_every and step != 0:
+                        step_end_time = round(time.time() - step_start_time, 2)
+                        step_start_time = time.time()
+                        print(
+                            f'epoch: {epoch}, ' +
+                            f'step: {step}, ' +
+                            f'acc: {accuracy:.3f}, ' +
+                            f'loss: {loss:.3f}, ' +
+                            f'lr: {self.optimizer.current_learning_rate}, ' +
+                            f'time: {step_end_time}s'
+                        )
 
             epoch_data_loss = self.loss.calculate_accumulated()
 
@@ -134,12 +137,12 @@ class Model:
 
             epoch_accuracy = self.accuracy.calculate_accumulated()
 
-            epoch_end_time = round(time.process_time() - epoch_start_time, 2)
+            epoch_end_time = round(time.time() - epoch_start_time, 2)
 
             print(
                 f'training - epoch {epoch}, ' +
                 f'acc: {epoch_accuracy:.3f}, ' +
-                f'loss: {epoch_loss:.3f} (' +
+                f'loss: {epoch_loss:.3f} ' +
                 f'data_loss: {epoch_data_loss:.3f}, ' +
                 f'lr: {self.optimizer.current_learning_rate}, ' +
                 f'time: {epoch_end_time}s'
@@ -148,10 +151,14 @@ class Model:
             if validation_data is not None:
                 self.evaluate(*validation_data, batch_size=batch_size)
 
+        training_end_time = round(time.time() - training_start_time)
+        print('-----------------------------------')
+        print(f'total time {training_end_time}s')
+
     def evaluate(self, X_val, y_val, *, epoch=None, batch_size=None):
         validation_steps = 1
 
-        validation_start_time = time.process_time()
+        validation_start_time = time.time()
         if batch_size is not None:
             validation_steps = len(X_val) // batch_size
             if validation_steps * batch_size < len(X_val):
@@ -183,7 +190,7 @@ class Model:
         validation_loss = self.loss.calculate_accumulated()
         validation_accuracy = self.accuracy.calculate_accumulated()
 
-        validation_end_time = time.process_time() - validation_start_time
+        validation_end_time = round(time.time() - validation_start_time, 2)
         if epoch is None:
             print(f'validation, ' +
                   f'acc: {validation_accuracy:.3f}, ' +
@@ -282,25 +289,11 @@ class Model:
                 layer.__dict__.pop(property, None)
 
         with gzip.open(path, 'wb') as f:
-            pickle.dump(model, f)
+            pickle.dump(model, f, -1)
 
     @staticmethod
     def load(path):
         with gzip.open(path, 'rb') as f:
-            model = renamed_load(f)
+            model = pickle.load(f)
             return model
 
-
-class RenameUnpickler(pickle.Unpickler):
-    def find_class(self, module, name):
-        renamed_module = module
-        if module == "utils.Model":
-            renamed_module = "models.Model"
-        if module == "layers.Layer_Input":
-            renamed_module = "models.model_utils.Layer_Input"
-
-        return super(RenameUnpickler, self).find_class(renamed_module, name)
-
-
-def renamed_load(file_obj):
-    return RenameUnpickler(file_obj).load()
