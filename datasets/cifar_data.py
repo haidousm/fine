@@ -61,10 +61,7 @@ def load_CIFAR10(num_training=49000, num_validation=1000, num_test=10000):
     X_test = X_test[mask]
     y_test = y_test[mask]
 
-    X_train = X_train.astype('float32')
-    X_test = X_test.astype('float32')
-
-    X_train /= 255
-    X_test /= 255
+    X_train = X_train.astype('float32') / 255.0
+    X_test = X_test.astype('float32') / 255.0
 
     return X_train, y_train, X_test, y_test

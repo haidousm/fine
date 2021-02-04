@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Layer_MaxPooling:
+class Layer_MaxPool:
 
     def __init__(self, pool_size, stride=2):
         self.pool_size = pool_size
