@@ -1,6 +1,7 @@
 import numpy as np
 
-from utils.accuracy.Accuracy import Accuracy
+from models.model_utils.accuracy.Accuracy import Accuracy
+
 
 class Accuracy_Categorical(Accuracy):
     def __init__(self, *, binary=False):

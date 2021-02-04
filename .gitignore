@@ -42,7 +42,6 @@ pip-delete-this-directory.txt
 nosetests.xml
 coverage.xml
 
-main.py
 demo/server.py
 demo/
 requirements

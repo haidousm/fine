@@ -1,23 +1,23 @@
 import numpy as np
 
 
-class Layer_MaxPooling:
+class Layer_MaxPool:
 
     def __init__(self, pool_size, stride=2):
         self.pool_size = pool_size
         self.stride = stride
 
     def forward(self, inputs, training):
-        self.inputs = inputs
-
         n_inputs, n_channels, input_height, input_width = inputs.shape
         pool_height, pool_width = self.pool_size
 
-        inputs_reshaped = inputs.reshape(n_inputs, n_channels, input_height // pool_height, pool_height,
-                                         input_width // pool_width, pool_width)
+        inputs_reshaped = inputs.reshape(
+            n_inputs, n_channels, input_height // pool_height,
+            pool_height, input_width // pool_width, pool_width)
 
         output = inputs_reshaped.max(axis=3).max(axis=4)
 
+        self.inputs = inputs
         self.inputs_reshaped = inputs_reshaped
         self.output = output
 

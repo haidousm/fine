@@ -1,4 +1,5 @@
 class Activation_Linear:
+
     def forward(self, inputs, training):
         self.inputs = inputs
         self.output = inputs
@@ -6,5 +7,6 @@ class Activation_Linear:
     def backward(self, dvalues):
         self.dinputs = dvalues.copy()
 
-    def predictions(self, outputs):
-        return outputs
+    @staticmethod
+    def predictions(output):
+        return output

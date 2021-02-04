@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Accuracy:
 
     def calculate(self, predictions, y):
@@ -13,7 +14,6 @@ class Accuracy:
         return accuracy
 
     def calculate_accumulated(self):
-
         accuracy = self.accumulated_sum / self.accumulated_count
 
         return accuracy
