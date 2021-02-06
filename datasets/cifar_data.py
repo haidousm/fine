@@ -1,6 +1,12 @@
 import numpy as np
 import pickle
 import os
+import pathlib
+import tarfile
+
+from utils.download_file import download_file
+
+CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 
 '''
 0: airplane
@@ -46,8 +52,30 @@ def _load_CIFAR10(ROOT):
 
 
 def load_CIFAR10(num_training=49000, num_validation=1000, num_test=10000):
-    cifar10_dir = '/Users/moussa/Desktop/Development/deep-learning/fine/data/cifar-10-batches-py'
-    X_train, y_train, X_test, y_test = _load_CIFAR10(cifar10_dir)
+    cifar10_path = f'{CURRENT_DIRECTORY}/data/cifar-10-batches-py'
+    data_unzipped = os.path.exists(cifar10_path)
+    if not data_unzipped:
+
+        cifar10_gzip_path = f'{CURRENT_DIRECTORY}/data/cifar-10-python.tar.gz'
+        data_downloaded = os.path.exists(cifar10_gzip_path)
+        if not data_downloaded:
+
+            print("downloading CIFAR10...")
+            dir_exists = os.path.exists(f'{CURRENT_DIRECTORY}/data')
+            if not dir_exists:
+                pathlib.Path(f'{CURRENT_DIRECTORY}/data').mkdir(parents=True, exist_ok=True)
+            url = 'https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz'
+            filename = url.split("/")[-1]
+            download_file(f'{CURRENT_DIRECTORY}/data/{filename}', url)
+
+        tar = tarfile.open(cifar10_gzip_path, "r:gz")
+        tar.extractall(f'{CURRENT_DIRECTORY}/data/')
+        tar.close()
+        os.remove(cifar10_gzip_path)
+
+    print("reading CIFAR10...")
+
+    X_train, y_train, X_test, y_test = _load_CIFAR10(cifar10_path)
 
     # mask = range(num_training, num_training + num_validation)
     # X_val = X_train[mask]
