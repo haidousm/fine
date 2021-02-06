@@ -1,6 +1,7 @@
 import numpy as np
 
 from datasets import cifar_data
+from datasets import mnist_data
 from models.Model import Model
 
 from layers.Layer_Convolution import Layer_Convolution
@@ -17,7 +18,7 @@ from models.model_utils.accuracy.Accuracy_Categorical import Accuracy_Categorica
 
 from optimizers.Optimizer_Adam import Optimizer_Adam
 
-X_train, y_train, X_test, y_test = cifar_data.load_CIFAR10()
+X_train, y_train, X_test, y_test = mnist_data.load_mnist()
 #
 # model = Model(
 #     layers=[
