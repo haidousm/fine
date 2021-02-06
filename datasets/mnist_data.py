@@ -1,9 +1,42 @@
 import gzip
 import numpy as np
 from utils.augment_image import augment_image
+import pathlib
+import os
+from utils.download_file import download_file
+
+CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 
 
 def load_mnist():
+    mnist_path = f'{CURRENT_DIRECTORY}/data/test-images.gz'
+    data_downloaded = os.path.exists(mnist_path)
+    if not data_downloaded:
+        print("downloading MNIST...")
+        dir_exists = os.path.exists(f'{CURRENT_DIRECTORY}/data')
+        if not dir_exists:
+            pathlib.Path(f'{CURRENT_DIRECTORY}/data').mkdir(parents=True, exist_ok=True)
+
+        dir_exists = os.path.exists(f'{CURRENT_DIRECTORY}/data/mnist')
+        if not dir_exists:
+            pathlib.Path(f'{CURRENT_DIRECTORY}/data/mnist').mkdir(parents=True, exist_ok=True)
+
+        train_images = 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+        filename = 'train-images.gz'
+        download_file(f'{CURRENT_DIRECTORY}/data/mnist/{filename}', train_images)
+
+        train_labels = 'http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz'
+        filename = 'train-labels.gz'
+        download_file(f'{CURRENT_DIRECTORY}/data/mnist/{filename}', train_labels)
+
+        test_images = 'http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz'
+        filename = 'test-images.gz'
+        download_file(f'{CURRENT_DIRECTORY}/data/mnist/{filename}', test_images)
+
+        test_labels = 'http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz'
+        filename = 'test-labels.gz'
+        download_file(f'{CURRENT_DIRECTORY}/data/mnist/{filename}', test_labels)
+
     X_train = __get_images("train")
     X_test = __get_images("test")
 
@@ -22,8 +55,10 @@ def load_mnist():
 def load_mnist_augmented():
     X_train_inaug, y_train, X_test_inaug, y_test = load_mnist()
 
-    X_train_aug = np.array([[augment_image(image * 255.0) for image in channel] for channel in X_train_inaug], dtype=np.float32) / 255.0
-    X_test_aug = np.array([[augment_image(image * 255.0) for image in channel] for channel in X_test_inaug], dtype=np.float32) / 255.0
+    X_train_aug = np.array([[augment_image(image * 255.0) for image in channel] for channel in X_train_inaug],
+                           dtype=np.float32) / 255.0
+    X_test_aug = np.array([[augment_image(image * 255.0) for image in channel] for channel in X_test_inaug],
+                          dtype=np.float32) / 255.0
 
     X_train = np.concatenate((X_train_aug, X_train_inaug))
     y_train = np.concatenate((y_train, y_train))
@@ -47,7 +82,7 @@ def load_mnist_augmented():
 
 
 def __get_images(data_type):
-    with gzip.open(f'data/{data_type}-images.gz', 'r') as f:
+    with gzip.open(f'{CURRENT_DIRECTORY}/data/mnist/{data_type}-images.gz', 'r') as f:
         int.from_bytes(f.read(4), 'big')
 
         image_count = int.from_bytes(f.read(4), 'big')
@@ -61,7 +96,7 @@ def __get_images(data_type):
 
 
 def __get_labels(data_type):
-    with gzip.open(f'data/{data_type}-labels.gz', 'r') as f:
+    with gzip.open(f'{CURRENT_DIRECTORY}/data/mnist/{data_type}-labels.gz', 'r') as f:
         int.from_bytes(f.read(4), 'big')
         int.from_bytes(f.read(4), 'big')
 
