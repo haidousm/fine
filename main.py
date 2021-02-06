@@ -56,9 +56,3 @@ X_train, y_train, X_test, y_test = mnist_data.load_mnist()
 # validation, acc: 0.561, loss: 1.229 time: 83.02s - 30 epochs
 # validation, acc: 0.578, loss: 1.198 time: 88.12s - 40 epochs
 # validation, acc: 0.590, loss: 1.171 time: 79.83s - 70 epochs
-'''
-git filter-branch --force --index-filter \
-  "git rm -r --cached --ignore-unmatch venv/" \
-  --prune-empty --tag-name-filter cat -- --all
-
-'''
