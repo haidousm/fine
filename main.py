@@ -1,6 +1,7 @@
 import numpy as np
 
 from datasets import cifar_data
+from datasets import mnist_data
 from models.Model import Model
 
 from layers.Layer_Convolution import Layer_Convolution
@@ -17,37 +18,37 @@ from models.model_utils.accuracy.Accuracy_Categorical import Accuracy_Categorica
 
 from optimizers.Optimizer_Adam import Optimizer_Adam
 
-X_train, y_train, X_test, y_test = cifar_data.load_CIFAR10()
-
-model = Model(
-    layers=[
-        Layer_Convolution(16, (3, 3, 3)),
-        Activation_ReLU(),
-        Layer_Convolution(16, (16, 3, 3)),
-        Activation_ReLU(),
-        Layer_MaxPool((2, 2)),
-
-        Layer_Convolution(32, (16, 3, 3)),
-        Activation_ReLU(),
-        Layer_Convolution(32, (32, 3, 3)),
-        Activation_ReLU(),
-        Layer_MaxPool((2, 2)),
-
-        Layer_Flatten(),
-        Layer_Dense(2048, 64),
-        Activation_ReLU(),
-        Layer_Dense(64, 64),
-        Activation_ReLU(),
-        Layer_Dense(64, 10),
-        Activation_Softmax()
-    ],
-    loss=Loss_CategoricalCrossEntropy(),
-    optimizer=Optimizer_Adam(decay=1e-3),
-    accuracy=Accuracy_Categorical()
-)
-
-model.finalize()
-model.train(X_train, y_train, epochs=10, batch_size=120)
+X_train, y_train, X_test, y_test = mnist_data.load_mnist()
+#
+# model = Model(
+#     layers=[
+#         Layer_Convolution(16, (3, 3, 3)),
+#         Activation_ReLU(),
+#         Layer_Convolution(16, (16, 3, 3)),
+#         Activation_ReLU(),
+#         Layer_MaxPool((2, 2)),
+#
+#         Layer_Convolution(32, (16, 3, 3)),
+#         Activation_ReLU(),
+#         Layer_Convolution(32, (32, 3, 3)),
+#         Activation_ReLU(),
+#         Layer_MaxPool((2, 2)),
+#
+#         Layer_Flatten(),
+#         Layer_Dense(2048, 64),
+#         Activation_ReLU(),
+#         Layer_Dense(64, 64),
+#         Activation_ReLU(),
+#         Layer_Dense(64, 10),
+#         Activation_Softmax()
+#     ],
+#     loss=Loss_CategoricalCrossEntropy(),
+#     optimizer=Optimizer_Adam(decay=1e-3),
+#     accuracy=Accuracy_Categorical()
+# )
+#
+# model.finalize()
+# model.train(X_train, y_train, epochs=10, batch_size=120, print_every=1)
 
 # model.load_parameters("trained_models/cifar-10.params")
 # validation, acc: 0.504, loss: 1.380 time: 76.96s - 10 epochs
