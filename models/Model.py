@@ -2,6 +2,7 @@ import copy
 import gzip
 import pickle
 import time
+import importlib
 
 import numpy as np
 
@@ -15,6 +16,7 @@ class Model:
         self.layers = layers
         self.set(loss=loss, optimizer=optimizer, accuracy=accuracy)
         self.softmax_classifier_output = None
+        self.first_run = True
 
     def add(self, layer):
 
@@ -30,7 +32,6 @@ class Model:
             self.accuracy = accuracy
 
     def finalize(self):
-
         self.input_layer = Layer_Input()
 
         layer_count = len(self.layers)
@@ -64,6 +65,10 @@ class Model:
     def train(self, X, y, *, epochs=1,
               batch_size=None, print_every=None,
               validation_data=None):
+
+        if self.first_run:
+            self.finalize()
+            self.first_run = False
 
         training_start_time = time.time()
         self.accuracy.init(y)
@@ -143,7 +148,6 @@ class Model:
                 f'training - epoch {epoch}, ' +
                 f'acc: {epoch_accuracy:.3f}, ' +
                 f'loss: {epoch_loss:.3f} ' +
-                f'data_loss: {epoch_data_loss:.3f}, ' +
                 f'lr: {self.optimizer.current_learning_rate}, ' +
                 f'time: {epoch_end_time}s'
             )
@@ -156,6 +160,11 @@ class Model:
         print(f'total time {training_end_time}s')
 
     def evaluate(self, X_val, y_val, *, epoch=None, batch_size=None):
+
+        if self.first_run:
+            self.finalize()
+            self.first_run = False
+
         validation_steps = 1
 
         validation_start_time = time.time()
@@ -268,11 +277,11 @@ class Model:
             layer.set_parameters(*parameter_set)
 
     def save_parameters(self, path):
-        with open(path, 'wb') as f:
+        with open(f'{path}', 'wb') as f:
             pickle.dump(self.get_parameters(), f)
 
     def load_parameters(self, path):
-        with open(path, 'rb') as f:
+        with open(f'{path}', 'rb') as f:
             self.set_parameters(pickle.load(f))
 
     def save(self, path):
@@ -285,15 +294,24 @@ class Model:
 
         for layer in model.layers:
             for property in ['inputs', 'output', 'dinputs',
-                             'dweights', 'dbiases']:
+                             'dweights', 'dbiases', 'next', 'prev']:
                 layer.__dict__.pop(property, None)
+            if hasattr(layer, 'inputs_reshaped'):
+                layer.__dict__.pop('inputs_reshaped', None)
 
-        with gzip.open(path, 'wb') as f:
+        for layer in model.trainable_layers:
+            for property in ['weight_cache', 'weight_momentums', 'bias_cache', 'bias_momentums']:
+                layer.__dict__.pop(property, None)
+            if hasattr(layer, 'inputs_col'):
+                layer.__dict__.pop('inputs_col', None)
+
+        model.trainable_layers = None
+        model.first_run = True
+
+        with gzip.open(f'{path}.gz', 'wb') as f:
             pickle.dump(model, f, -1)
 
-    @staticmethod
-    def load(path):
+    def load(self, path):
         with gzip.open(path, 'rb') as f:
             model = pickle.load(f)
             return model
-

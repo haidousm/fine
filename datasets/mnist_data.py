@@ -9,7 +9,7 @@ CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 
 
 def load_mnist():
-    mnist_path = f'{CURRENT_DIRECTORY}/data/test-images.gz'
+    mnist_path = f'{CURRENT_DIRECTORY}/data/mnist/test-images.gz'
     data_downloaded = os.path.exists(mnist_path)
     if not data_downloaded:
         print("downloading MNIST...")
