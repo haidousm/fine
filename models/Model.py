@@ -2,11 +2,10 @@ import copy
 import gzip
 import pickle
 import time
-import importlib
 
 import numpy as np
 
-from models.model_utils.Layer_Input import Layer_Input
+from .model_utils import Layer_Input
 
 
 class Model:

@@ -73,13 +73,11 @@ def load_CIFAR10(num_training=49000, num_validation=1000, num_test=10000):
         tar.close()
         os.remove(cifar10_gzip_path)
 
-    print("reading CIFAR10...")
-
     X_train, y_train, X_test, y_test = _load_CIFAR10(cifar10_path)
 
-    # mask = range(num_training, num_training + num_validation)
-    # X_val = X_train[mask]
-    # y_val = y_train[mask]
+    mask = range(num_training, num_training + num_validation)
+    X_val = X_train[mask]
+    y_val = y_train[mask]
 
     mask = range(num_training)
     X_train = X_train[mask]
@@ -92,4 +90,4 @@ def load_CIFAR10(num_training=49000, num_validation=1000, num_test=10000):
     X_train = X_train.astype('float32') / 255.0
     X_test = X_test.astype('float32') / 255.0
 
-    return X_train, y_train, X_test, y_test
+    return X_train, y_train, X_val, y_val, X_test, y_test

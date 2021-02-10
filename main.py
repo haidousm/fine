@@ -1,24 +1,21 @@
-import numpy as np
+from datasets import load_CIFAR10
+from models import Model
 
-from datasets import cifar_data
-from datasets import mnist_data
-from models.Model import Model
+from layers import Layer_Convolution
+from layers import Layer_MaxPool
+from layers import Layer_Flatten
+from layers import Layer_Dense
 
-from layers.Layer_Convolution import Layer_Convolution
-from layers.Layer_Dense import Layer_Dense
-from layers.Layer_Flatten import Layer_Flatten
-from layers.Layer_MaxPool import Layer_MaxPool
+from activation_functions import Activation_ReLU
+from activation_functions import Activation_Softmax
 
-from activation_functions.Activation_ReLU import Activation_ReLU
-from activation_functions.Activation_Softmax import Activation_Softmax
+from loss_functions import Loss_CategoricalCrossEntropy
 
-from loss_functions.Loss_CategoricalCrossEntropy import Loss_CategoricalCrossEntropy
+from models.model_utils import Accuracy_Categorical
 
-from models.model_utils.accuracy.Accuracy_Categorical import Accuracy_Categorical
+from optimizers import Optimizer_Adam
 
-from optimizers.Optimizer_Adam import Optimizer_Adam
-
-X_train, y_train, X_test, y_test = mnist_data.load_mnist()
+X_train, y_train, X_val, y_val, X_test, y_test = load_CIFAR10()
 
 model = Model(
     layers=[
@@ -34,8 +31,14 @@ model = Model(
         Activation_ReLU(),
         Layer_MaxPool((2, 2)),
 
+        Layer_Convolution(64, (32, 3, 3)),
+        Activation_ReLU(),
+        Layer_Convolution(64, (64, 3, 3)),
+        Activation_ReLU(),
+        Layer_MaxPool((2, 2)),
+
         Layer_Flatten(),
-        Layer_Dense(2048, 64),
+        Layer_Dense(1024, 64),
         Activation_ReLU(),
         Layer_Dense(64, 64),
         Activation_ReLU(),
@@ -47,4 +50,5 @@ model = Model(
     accuracy=Accuracy_Categorical()
 )
 
-model.train(X_train, y_train, epochs=10, batch_size=120)
+model.train(X_train, y_train, epochs=5, batch_size=120, print_every=1)
+model.evaluate(X_val, y_val, batch_size=120)
