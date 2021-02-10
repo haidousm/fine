@@ -1,4 +1,4 @@
-class Activation_Linear:
+class Linear:
 
     def forward(self, inputs, training):
         self.inputs = inputs

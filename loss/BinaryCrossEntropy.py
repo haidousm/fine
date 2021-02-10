@@ -1,9 +1,9 @@
 import numpy as np
 
-from loss_functions.Loss import Loss
+from loss.Loss import Loss
 
 
-class Loss_BinaryCrossEntropy(Loss):
+class BinaryCrossEntropy(Loss):
 
     def forward(self, y_pred, y_true):
 

@@ -3,7 +3,7 @@ import numpy as np
 from models.model_utils.accuracy.Accuracy import Accuracy
 
 
-class Accuracy_Regression(Accuracy):
+class Regression(Accuracy):
     def __init__(self):
         self.precision = None
 

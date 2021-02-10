@@ -2,7 +2,7 @@ import numpy as np
 from utils.im2col.im2col_cython import im2col_cython, col2im_cython
 
 
-class Layer_Convolution:
+class Conv2D:
 
     def __init__(self,
                  n_kernels, kernel_shape,

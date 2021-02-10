@@ -1,58 +1,48 @@
-import numpy as np
+from datasets import load_mnist
+from models import SequentialModel
 
-from datasets import cifar_data
-from datasets import mnist_data
-from models.Model import Model
+from layers import Conv2D
+from layers import MaxPool2D
+from layers import Flatten
+from layers import Dense
 
-from layers.Layer_Convolution import Layer_Convolution
-from layers.Layer_Dense import Layer_Dense
-from layers.Layer_Flatten import Layer_Flatten
-from layers.Layer_MaxPool import Layer_MaxPool
+from activations import ReLU
+from activations import Softmax
 
-from activation_functions.Activation_ReLU import Activation_ReLU
-from activation_functions.Activation_Softmax import Activation_Softmax
+from loss import CategoricalCrossEntropy
 
-from loss_functions.Loss_CategoricalCrossEntropy import Loss_CategoricalCrossEntropy
+from models.model_utils import Categorical
 
-from models.model_utils.accuracy.Accuracy_Categorical import Accuracy_Categorical
+from optimizers import Adam
 
-from optimizers.Optimizer_Adam import Optimizer_Adam
+X_train, y_train, X_test, y_test = load_mnist()
 
-X_train, y_train, X_test, y_test = mnist_data.load_mnist()
-#
-# model = Model(
-#     layers=[
-#         Layer_Convolution(16, (3, 3, 3)),
-#         Activation_ReLU(),
-#         Layer_Convolution(16, (16, 3, 3)),
-#         Activation_ReLU(),
-#         Layer_MaxPool((2, 2)),
-#
-#         Layer_Convolution(32, (16, 3, 3)),
-#         Activation_ReLU(),
-#         Layer_Convolution(32, (32, 3, 3)),
-#         Activation_ReLU(),
-#         Layer_MaxPool((2, 2)),
-#
-#         Layer_Flatten(),
-#         Layer_Dense(2048, 64),
-#         Activation_ReLU(),
-#         Layer_Dense(64, 64),
-#         Activation_ReLU(),
-#         Layer_Dense(64, 10),
-#         Activation_Softmax()
-#     ],
-#     loss=Loss_CategoricalCrossEntropy(),
-#     optimizer=Optimizer_Adam(decay=1e-3),
-#     accuracy=Accuracy_Categorical()
-# )
-#
-# model.finalize()
-# model.train(X_train, y_train, epochs=10, batch_size=120, print_every=1)
+model = SequentialModel(
+    layers=[
+        Conv2D(16, (1, 3, 3)),
+        ReLU(),
+        Conv2D(16, (16, 3, 3)),
+        ReLU(),
+        MaxPool2D((2, 2)),
 
-# model.load_parameters("trained_models/cifar-10.params")
-# validation, acc: 0.504, loss: 1.380 time: 76.96s - 10 epochs
-# validation, acc: 0.530, loss: 1.313 time: 79.62s - 20 epochs
-# validation, acc: 0.561, loss: 1.229 time: 83.02s - 30 epochs
-# validation, acc: 0.578, loss: 1.198 time: 88.12s - 40 epochs
-# validation, acc: 0.590, loss: 1.171 time: 79.83s - 70 epochs
+        Conv2D(32, (16, 3, 3)),
+        ReLU(),
+        Conv2D(32, (32, 3, 3)),
+        ReLU(),
+        MaxPool2D((2, 2)),
+
+        Flatten(),
+        Dense(1568, 64),
+        ReLU(),
+        Dense(64, 64),
+        ReLU(),
+        Dense(64, 10),
+        Softmax()
+    ],
+    loss=CategoricalCrossEntropy(),
+    optimizer=Adam(decay=1e-3),
+    accuracy=Categorical()
+)
+
+model.train(X_train, y_train, epochs=5, batch_size=120, print_every=100)
+model.evaluate(X_test, y_test, batch_size=120)
