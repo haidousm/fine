@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Optimizer_SGD:
+class StochasticGD:
 
     def __init__(self, learning_rate=1., decay=0., momentum=0.):
         self.learning_rate = learning_rate

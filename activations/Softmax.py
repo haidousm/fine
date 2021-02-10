@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Activation_Softmax:
+class Softmax:
 
     def forward(self, inputs, training):
         self.inputs = inputs

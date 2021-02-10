@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Optimizer_Adam:
+class Adam:
 
     def __init__(self, learning_rate=0.001, decay=0.,
                  epsilon=1e-7, beta_1=0.9, beta_2=0.999):

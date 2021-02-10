@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Layer_Dropout:
+class Dropout:
 
     def __init__(self, keep):
         self.drop = 1 - keep

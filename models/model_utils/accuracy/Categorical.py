@@ -3,7 +3,7 @@ import numpy as np
 from models.model_utils.accuracy.Accuracy import Accuracy
 
 
-class Accuracy_Categorical(Accuracy):
+class Categorical(Accuracy):
     def __init__(self, *, binary=False):
         self.binary = binary
 

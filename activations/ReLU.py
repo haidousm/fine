@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Activation_ReLU:
+class ReLU:
 
     def forward(self, inputs, training):
         self.inputs = inputs

@@ -1,3 +1,3 @@
-from .Layer_Input import Layer_Input
-from .accuracy.Accuracy_Categorical import Accuracy_Categorical
-from .accuracy.Accuracy_Regression import Accuracy_Regression
+from .Input import Input
+from .accuracy.Categorical import Categorical
+from .accuracy.Regression import Regression

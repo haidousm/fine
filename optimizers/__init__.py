@@ -1,2 +1,2 @@
-from .Optimizer_Adam import Optimizer_Adam
-from .Optimizer_SGD import Optimizer_SGD
+from .Adam import Adam
+from .StochasticGD import StochasticGD

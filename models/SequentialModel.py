@@ -5,10 +5,10 @@ import time
 
 import numpy as np
 
-from .model_utils import Layer_Input
+from .model_utils import Input
 
 
-class Model:
+class SequentialModel:
 
     def __init__(self, layers=[], loss=None, optimizer=None, accuracy=None):
 
@@ -31,7 +31,7 @@ class Model:
             self.accuracy = accuracy
 
     def finalize(self):
-        self.input_layer = Layer_Input()
+        self.input_layer = Input()
 
         layer_count = len(self.layers)
         self.trainable_layers = []
