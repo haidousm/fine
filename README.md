@@ -15,50 +15,60 @@ python3 -m pip install -r requirements.txt
 
 ## <a name="demo"></a> Demo
 ### [MNIST Demo Link](https://haidousm.com/fine-mnist-demo/)
-Demo was built using javascript for the frontend and a flask server to serve predictions from model.
+Demo was built using javascript for the frontend, and a flask server to serve predictions from the model.
 
 Demo model creation & training:
 
 ```
-import numpy as np
+from datasets import load_mnist
+from models import Sequential
 
-from layers.Layer_Flatten import Layer_Flatten
-from layers.Layer_Dense import Layer_Dense
+from layers import Conv2D
+from layers import MaxPool2D
+from layers import Flatten
+from layers import Dense
 
-from activation_functions.Activation_ReLU import Activation_ReLU
-from activation_functions.Activation_Softmax import Activation_Softmax
+from activations import ReLU
+from activations import Softmax
 
-from loss_functions.Loss_CategoricalCrossEntropy import Loss_CategoricalCrossEntropy
+from loss import CategoricalCrossEntropy
 
-from optimizers.Optimizer_SGD import Optimizer_SGD
+from models.model_utils import Categorical
 
-from utils.Model import Model
-from utils.accuracy.Accuracy_Categorical import Accuracy_Categorical
+from optimizers import Adam
 
-X, y, X_test, y_test = mnist_data()
-X = np.array([image.astype(np.float32) / 255 for image in X])
-X_test = np.array([image.astype(np.float32) / 255 for image in X_test])
+X_train, y_train, X_test, y_test = load_mnist()
 
-model = Model()
-model.add(Layer_Flatten())
-model.add(Layer_Dense(784, 256))
-model.add(Activation_ReLU())
-model.add(Layer_Dense(256, 32))
-model.add(Activation_ReLU())
-model.add(Layer_Dense(32, 10))
-model.add(Activation_Softmax())
+model = Sequential(
+    layers=[
+        Conv2D(16, (1, 3, 3)),
+        ReLU(),
+        Conv2D(16, (16, 3, 3)),
+        ReLU(),
+        MaxPool2D((2, 2)),
 
-model.set(loss=Loss_CategoricalCrossEntropy(),
-          optimizer=Optimizer_SGD(learning_rate=0.1, decay=1e-3, momentum=.9),
-          accuracy=Accuracy_Categorical())
+        Conv2D(32, (16, 3, 3)),
+        ReLU(),
+        Conv2D(32, (32, 3, 3)),
+        ReLU(),
+        MaxPool2D((2, 2)),
 
-model.finalize()
-model.train(X, y,
-            epochs=5,
-            batch_size=128,
-            print_every=100)
-            
-model.evaluate(X_test, y_test, batch_size=128)
+        Flatten(),
+        Dense(1568, 64),
+        ReLU(),
+        Dense(64, 64),
+        ReLU(),
+        Dense(64, 10),
+        Softmax()
+    ],
+    loss=CategoricalCrossEntropy(),
+    optimizer=Adam(decay=1e-3),
+    accuracy=Categorical()
+)
+
+model.train(X_train, y_train, epochs=5, batch_size=120, print_every=100)
+model.evaluate(X_test, y_test, batch_size=120)
+
 
 ```
 

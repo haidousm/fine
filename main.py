@@ -1,5 +1,5 @@
 from datasets import load_mnist
-from models import SequentialModel
+from models import Sequential
 
 from layers import Conv2D
 from layers import MaxPool2D
@@ -17,7 +17,7 @@ from optimizers import Adam
 
 X_train, y_train, X_test, y_test = load_mnist()
 
-model = SequentialModel(
+model = Sequential(
     layers=[
         Conv2D(16, (1, 3, 3)),
         ReLU(),

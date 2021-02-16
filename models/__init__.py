@@ -1,1 +1,1 @@
-from .SequentialModel import SequentialModel
+from .Sequential import Sequential
