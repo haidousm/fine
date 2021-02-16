@@ -8,7 +8,7 @@ import numpy as np
 from .model_utils import Input
 
 
-class SequentialModel:
+class Sequential:
 
     def __init__(self, layers=[], loss=None, optimizer=None, accuracy=None):
 
