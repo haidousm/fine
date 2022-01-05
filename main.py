@@ -1,22 +1,22 @@
-from datasets import load_mnist
-from models import Sequential
+from fine.datasets import load_mnist
+from fine.models import Sequential
 
-from layers import Conv2D
-from layers import MaxPool2D
-from layers import Flatten
-from layers import Dense
+from fine.layers import Conv2D
+from fine.layers import MaxPool2D
+from fine.layers import Flatten
+from fine.layers import Dense
 
-from activations import ReLU
-from activations import Softmax
+from fine.activations import ReLU
+from fine.activations import Softmax
 
-from loss import CategoricalCrossEntropy
+from fine.loss import CategoricalCrossEntropy
 
-from models.model_utils import Categorical
+from fine.models.model_utils import Categorical
 
-from optimizers import Adam
+from fine.optimizers import Adam
 
 if __name__ == "__main__":
-    
+
     X_train, y_train, X_test, y_test = load_mnist()
 
     model = Sequential(

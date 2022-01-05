@@ -1,6 +1,6 @@
 import numpy as np
 
-from models.model_utils.accuracy.Accuracy import Accuracy
+from fine.models.model_utils.accuracy.Accuracy import Accuracy
 
 
 class Regression(Accuracy):

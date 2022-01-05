@@ -4,7 +4,7 @@ import os
 import pathlib
 import tarfile
 
-from utils.download_file import download_file
+from fine.utils.download_file import download_file
 
 CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 
