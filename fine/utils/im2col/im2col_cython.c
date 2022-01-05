@@ -10,12 +10,12 @@
         "include_dirs": [
             "/Users/moussa/Desktop/Development/python/fine/venv/lib/python3.9/site-packages/numpy/core/include"
         ],
-        "name": "utils.im2col_cython",
+        "name": "fine.utils.im2col_cython",
         "sources": [
-            "utils/im2col/im2col_cython.pyx"
+            "fine/utils/im2col/im2col_cython.pyx"
         ]
     },
-    "module_name": "utils.im2col_cython"
+    "module_name": "fine.utils.im2col_cython"
 }
 END: Cython Metadata */
 
@@ -692,8 +692,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__utils__im2col_cython
-#define __PYX_HAVE_API__utils__im2col_cython
+#define __PYX_HAVE__fine__utils__im2col_cython
+#define __PYX_HAVE_API__fine__utils__im2col_cython
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -936,7 +936,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "utils/im2col/im2col_cython.pyx",
+  "fine/utils/im2col/im2col_cython.pyx",
   "venv/lib/python3.9/site-packages/numpy/__init__.pxd",
   "stringsource",
   "venv/lib/python3.9/site-packages/Cython/Includes/cpython/type.pxd",
@@ -2380,7 +2380,7 @@ static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
 /* Module declarations from 'cython' */
 
-/* Module declarations from 'utils.im2col_cython' */
+/* Module declarations from 'fine.utils.im2col_cython' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -2392,12 +2392,12 @@ static PyObject *contiguous = 0;
 static PyObject *indirect_contiguous = 0;
 static int __pyx_memoryview_thread_locks_used;
 static PyThread_type_lock __pyx_memoryview_thread_locks[8];
-static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
-static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
-static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
-static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
-static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
-static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static int __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static int __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static int __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static int __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static PyObject *__pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
+static PyObject *__pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *, PyArrayObject *, int, int, int, int, int, int, int, int, int, int); /*proto*/
 static struct __pyx_array_obj *__pyx_array_new(PyObject *, Py_ssize_t, char *, char *, char *); /*proto*/
 static void *__pyx_align_pointer(void *, size_t); /*proto*/
 static PyObject *__pyx_memoryview_new(PyObject *, int, int, __Pyx_TypeInfo *); /*proto*/
@@ -2433,11 +2433,11 @@ static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t = { "float32_t", NULL, sizeof(__pyx_t_5numpy_float32_t), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t = { "float64_t", NULL, sizeof(__pyx_t_5numpy_float64_t), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "utils.im2col_cython"
-extern int __pyx_module_is_main_utils__im2col_cython;
-int __pyx_module_is_main_utils__im2col_cython = 0;
+#define __Pyx_MODULE_NAME "fine.utils.im2col_cython"
+extern int __pyx_module_is_main_fine__utils__im2col_cython;
+int __pyx_module_is_main_fine__utils__im2col_cython = 0;
 
-/* Implementation of 'utils.im2col_cython' */
+/* Implementation of 'fine.utils.im2col_cython' */
 static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ImportError;
@@ -2547,19 +2547,19 @@ static const char __pyx_k_col2im_6d_cython[] = "col2im_6d_cython";
 static const char __pyx_k_pyx_unpickle_Enum[] = "__pyx_unpickle_Enum";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_strided_and_direct[] = "<strided and direct>";
-static const char __pyx_k_utils_im2col_cython[] = "utils.im2col_cython";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
+static const char __pyx_k_fine_utils_im2col_cython[] = "fine.utils.im2col_cython";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
 static const char __pyx_k_No_matching_signature_found[] = "No matching signature found";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
 static const char __pyx_k_strided_and_direct_or_indirect[] = "<strided and direct or indirect>";
-static const char __pyx_k_utils_im2col_im2col_cython_pyx[] = "utils/im2col/im2col_cython.pyx";
+static const char __pyx_k_fine_utils_im2col_im2col_cython[] = "fine/utils/im2col/im2col_cython.pyx";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
 static const char __pyx_k_Buffer_view_does_not_expose_stri[] = "Buffer view does not expose strides";
 static const char __pyx_k_Can_only_create_a_buffer_that_is[] = "Can only create a buffer that is contiguous in memory.";
@@ -2635,6 +2635,8 @@ static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_field_height;
 static PyObject *__pyx_n_s_field_width;
+static PyObject *__pyx_n_s_fine_utils_im2col_cython;
+static PyObject *__pyx_kp_s_fine_utils_im2col_im2col_cython;
 static PyObject *__pyx_n_s_flags;
 static PyObject *__pyx_n_s_float32_t;
 static PyObject *__pyx_n_s_float64_t;
@@ -2704,20 +2706,18 @@ static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
-static PyObject *__pyx_n_s_utils_im2col_cython;
-static PyObject *__pyx_kp_s_utils_im2col_im2col_cython_pyx;
 static PyObject *__pyx_n_s_x;
 static PyObject *__pyx_n_s_x_padded;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride); /* proto */
-static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride); /* proto */
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2816,7 +2816,7 @@ static PyObject *__pyx_codeobj__39;
 static PyObject *__pyx_codeobj__46;
 /* Late includes */
 
-/* "utils/im2col/im2col_cython.pyx":12
+/* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -2825,9 +2825,9 @@ static PyObject *__pyx_codeobj__46;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5utils_13im2col_cython_1im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5utils_13im2col_cython_1im2col_cython = {"im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_5utils_13im2col_cython_1im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5utils_13im2col_cython_1im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_1im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4fine_5utils_13im2col_cython_1im2col_cython = {"im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_4fine_5utils_13im2col_cython_1im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_1im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_signatures = 0;
   PyObject *__pyx_v_args = 0;
   PyObject *__pyx_v_kwargs = 0;
@@ -2900,18 +2900,18 @@ static PyObject *__pyx_pw_5utils_13im2col_cython_1im2col_cython(PyObject *__pyx_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__pyx_fused_cpdef", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_im2col_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_im2col_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
   PyObject *__pyx_v_dest_sig = NULL;
   Py_ssize_t __pyx_v_i;
   PyTypeObject *__pyx_v_ndarray = 0;
@@ -3339,7 +3339,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyO
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_dest_sig);
@@ -3358,9 +3358,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_im2col_cython(CYTHON_UNUSED PyO
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_7im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_7im2col_cython = {"__pyx_fuse_0im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_7im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_7im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_7im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_7im2col_cython = {"__pyx_fuse_0im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_7im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_7im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_field_height;
   int __pyx_v_field_width;
@@ -3444,12 +3444,12 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_7im2col_cython(PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("im2col_cython", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_x), __pyx_ptype_5numpy_ndarray, 1, "x", 0))) __PYX_ERR(0, 12, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_6im2col_cython(__pyx_self, __pyx_v_x, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_6im2col_cython(__pyx_self, __pyx_v_x, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3460,7 +3460,7 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_7im2col_cython(PyOb
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_N;
   int __pyx_v_C;
   int __pyx_v_H;
@@ -3509,7 +3509,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_pybuffernd_x.diminfo[0].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x.diminfo[0].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x.diminfo[1].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x.diminfo[1].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x.diminfo[2].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x.diminfo[2].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x.diminfo[3].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x.diminfo[3].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":14
+  /* "fine/utils/im2col/im2col_cython.pyx":14
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,
  *                   int field_width, int padding, int stride):
  *     cdef int N = x.shape[0]             # <<<<<<<<<<<<<<
@@ -3518,7 +3518,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_N = (__pyx_v_x->dimensions[0]);
 
-  /* "utils/im2col/im2col_cython.pyx":15
+  /* "fine/utils/im2col/im2col_cython.pyx":15
  *                   int field_width, int padding, int stride):
  *     cdef int N = x.shape[0]
  *     cdef int C = x.shape[1]             # <<<<<<<<<<<<<<
@@ -3527,7 +3527,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_C = (__pyx_v_x->dimensions[1]);
 
-  /* "utils/im2col/im2col_cython.pyx":16
+  /* "fine/utils/im2col/im2col_cython.pyx":16
  *     cdef int N = x.shape[0]
  *     cdef int C = x.shape[1]
  *     cdef int H = x.shape[2]             # <<<<<<<<<<<<<<
@@ -3536,7 +3536,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_H = (__pyx_v_x->dimensions[2]);
 
-  /* "utils/im2col/im2col_cython.pyx":17
+  /* "fine/utils/im2col/im2col_cython.pyx":17
  *     cdef int C = x.shape[1]
  *     cdef int H = x.shape[2]
  *     cdef int W = x.shape[3]             # <<<<<<<<<<<<<<
@@ -3545,7 +3545,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_W = (__pyx_v_x->dimensions[3]);
 
-  /* "utils/im2col/im2col_cython.pyx":19
+  /* "fine/utils/im2col/im2col_cython.pyx":19
  *     cdef int W = x.shape[3]
  * 
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1             # <<<<<<<<<<<<<<
@@ -3563,7 +3563,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_v_HH = (__Pyx_div_long(__pyx_t_1, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":20
+  /* "fine/utils/im2col/im2col_cython.pyx":20
  * 
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1             # <<<<<<<<<<<<<<
@@ -3581,7 +3581,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_v_WW = (__Pyx_div_long(__pyx_t_1, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":22
+  /* "fine/utils/im2col/im2col_cython.pyx":22
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  * 
  *     cdef int p = padding             # <<<<<<<<<<<<<<
@@ -3590,7 +3590,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_p = __pyx_v_padding;
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -3603,7 +3603,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":24
+  /* "fine/utils/im2col/im2col_cython.pyx":24
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')             # <<<<<<<<<<<<<<
@@ -3649,7 +3649,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -3665,7 +3665,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":24
+  /* "fine/utils/im2col/im2col_cython.pyx":24
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')             # <<<<<<<<<<<<<<
@@ -3676,7 +3676,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_mode, __pyx_n_s_constant) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -3702,7 +3702,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -3715,7 +3715,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":27
+  /* "fine/utils/im2col/im2col_cython.pyx":27
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(
  *         (C * field_height * field_width, N * HH * WW),             # <<<<<<<<<<<<<<
@@ -3735,7 +3735,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -3748,7 +3748,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":28
+  /* "fine/utils/im2col/im2col_cython.pyx":28
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(
  *         (C * field_height * field_width, N * HH * WW),
  *         dtype=x.dtype)             # <<<<<<<<<<<<<<
@@ -3762,7 +3762,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -3788,16 +3788,16 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __pyx_v_cols = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":30
+  /* "fine/utils/im2col/im2col_cython.pyx":30
  *         dtype=x.dtype)
  * 
  *     im2col_cython_inner(cols, x_padded, N, C, H, W, HH, WW,             # <<<<<<<<<<<<<<
  *                         field_height, field_width, padding, stride)
  *     return cols
  */
-  __pyx_t_9 = __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_9 = __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":32
+  /* "fine/utils/im2col/im2col_cython.pyx":32
  *     im2col_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     return cols             # <<<<<<<<<<<<<<
@@ -3809,7 +3809,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
   __pyx_r = ((PyObject *)__pyx_v_cols);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":12
+  /* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -3832,7 +3832,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3848,9 +3848,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_6im2col_cython(CYTHON_UNUSED Py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_9im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_9im2col_cython = {"__pyx_fuse_1im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_9im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_9im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_9im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_9im2col_cython = {"__pyx_fuse_1im2col_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_9im2col_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_9im2col_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_field_height;
   int __pyx_v_field_width;
@@ -3934,12 +3934,12 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_9im2col_cython(PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("im2col_cython", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_x), __pyx_ptype_5numpy_ndarray, 1, "x", 0))) __PYX_ERR(0, 12, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_8im2col_cython(__pyx_self, __pyx_v_x, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_8im2col_cython(__pyx_self, __pyx_v_x, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3950,7 +3950,7 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_9im2col_cython(PyOb
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_N;
   int __pyx_v_C;
   int __pyx_v_H;
@@ -3999,7 +3999,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_pybuffernd_x.diminfo[0].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x.diminfo[0].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x.diminfo[1].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x.diminfo[1].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x.diminfo[2].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x.diminfo[2].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x.diminfo[3].strides = __pyx_pybuffernd_x.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x.diminfo[3].shape = __pyx_pybuffernd_x.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":14
+  /* "fine/utils/im2col/im2col_cython.pyx":14
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,
  *                   int field_width, int padding, int stride):
  *     cdef int N = x.shape[0]             # <<<<<<<<<<<<<<
@@ -4008,7 +4008,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_N = (__pyx_v_x->dimensions[0]);
 
-  /* "utils/im2col/im2col_cython.pyx":15
+  /* "fine/utils/im2col/im2col_cython.pyx":15
  *                   int field_width, int padding, int stride):
  *     cdef int N = x.shape[0]
  *     cdef int C = x.shape[1]             # <<<<<<<<<<<<<<
@@ -4017,7 +4017,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_C = (__pyx_v_x->dimensions[1]);
 
-  /* "utils/im2col/im2col_cython.pyx":16
+  /* "fine/utils/im2col/im2col_cython.pyx":16
  *     cdef int N = x.shape[0]
  *     cdef int C = x.shape[1]
  *     cdef int H = x.shape[2]             # <<<<<<<<<<<<<<
@@ -4026,7 +4026,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_H = (__pyx_v_x->dimensions[2]);
 
-  /* "utils/im2col/im2col_cython.pyx":17
+  /* "fine/utils/im2col/im2col_cython.pyx":17
  *     cdef int C = x.shape[1]
  *     cdef int H = x.shape[2]
  *     cdef int W = x.shape[3]             # <<<<<<<<<<<<<<
@@ -4035,7 +4035,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_W = (__pyx_v_x->dimensions[3]);
 
-  /* "utils/im2col/im2col_cython.pyx":19
+  /* "fine/utils/im2col/im2col_cython.pyx":19
  *     cdef int W = x.shape[3]
  * 
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1             # <<<<<<<<<<<<<<
@@ -4053,7 +4053,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_v_HH = (__Pyx_div_long(__pyx_t_1, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":20
+  /* "fine/utils/im2col/im2col_cython.pyx":20
  * 
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1             # <<<<<<<<<<<<<<
@@ -4071,7 +4071,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   }
   __pyx_v_WW = (__Pyx_div_long(__pyx_t_1, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":22
+  /* "fine/utils/im2col/im2col_cython.pyx":22
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  * 
  *     cdef int p = padding             # <<<<<<<<<<<<<<
@@ -4080,7 +4080,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  */
   __pyx_v_p = __pyx_v_padding;
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -4093,7 +4093,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":24
+  /* "fine/utils/im2col/im2col_cython.pyx":24
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')             # <<<<<<<<<<<<<<
@@ -4139,7 +4139,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -4155,7 +4155,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":24
+  /* "fine/utils/im2col/im2col_cython.pyx":24
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')             # <<<<<<<<<<<<<<
@@ -4166,7 +4166,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_mode, __pyx_n_s_constant) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":23
+  /* "fine/utils/im2col/im2col_cython.pyx":23
  * 
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,             # <<<<<<<<<<<<<<
@@ -4192,7 +4192,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -4205,7 +4205,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":27
+  /* "fine/utils/im2col/im2col_cython.pyx":27
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(
  *         (C * field_height * field_width, N * HH * WW),             # <<<<<<<<<<<<<<
@@ -4225,7 +4225,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -4238,7 +4238,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":28
+  /* "fine/utils/im2col/im2col_cython.pyx":28
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(
  *         (C * field_height * field_width, N * HH * WW),
  *         dtype=x.dtype)             # <<<<<<<<<<<<<<
@@ -4252,7 +4252,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":26
+  /* "fine/utils/im2col/im2col_cython.pyx":26
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')
  * 
  *     cdef np.ndarray[DTYPE_t, ndim=2] cols = np.zeros(             # <<<<<<<<<<<<<<
@@ -4278,16 +4278,16 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __pyx_v_cols = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":30
+  /* "fine/utils/im2col/im2col_cython.pyx":30
  *         dtype=x.dtype)
  * 
  *     im2col_cython_inner(cols, x_padded, N, C, H, W, HH, WW,             # <<<<<<<<<<<<<<
  *                         field_height, field_width, padding, stride)
  *     return cols
  */
-  __pyx_t_9 = __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_9 = __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":32
+  /* "fine/utils/im2col/im2col_cython.pyx":32
  *     im2col_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     return cols             # <<<<<<<<<<<<<<
@@ -4299,7 +4299,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   __pyx_r = ((PyObject *)__pyx_v_cols);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":12
+  /* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -4322,7 +4322,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4337,7 +4337,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "utils/im2col/im2col_cython.pyx":35
+/* "fine/utils/im2col/im2col_cython.pyx":35
  * 
  * @cython.boundscheck(False)
  * cdef int im2col_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -4345,7 +4345,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_8im2col_cython(CYTHON_UNUSED Py
  *                              int N, int C, int H, int W, int HH, int WW,
  */
 
-static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
+static int __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_ii;
   int __pyx_v_jj;
@@ -4407,7 +4407,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":41
+  /* "fine/utils/im2col/im2col_cython.pyx":41
  *     cdef int c, ii, jj, row, yy, xx, i, col
  * 
  *     for c in range(C):             # <<<<<<<<<<<<<<
@@ -4419,7 +4419,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_c = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":42
+    /* "fine/utils/im2col/im2col_cython.pyx":42
  * 
  *     for c in range(C):
  *         for yy in range(HH):             # <<<<<<<<<<<<<<
@@ -4431,7 +4431,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_yy = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":43
+      /* "fine/utils/im2col/im2col_cython.pyx":43
  *     for c in range(C):
  *         for yy in range(HH):
  *             for xx in range(WW):             # <<<<<<<<<<<<<<
@@ -4443,7 +4443,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_xx = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":44
+        /* "fine/utils/im2col/im2col_cython.pyx":44
  *         for yy in range(HH):
  *             for xx in range(WW):
  *                 for ii in range(field_height):             # <<<<<<<<<<<<<<
@@ -4455,7 +4455,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_ii = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":45
+          /* "fine/utils/im2col/im2col_cython.pyx":45
  *             for xx in range(WW):
  *                 for ii in range(field_height):
  *                     for jj in range(field_width):             # <<<<<<<<<<<<<<
@@ -4467,7 +4467,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_jj = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":46
+            /* "fine/utils/im2col/im2col_cython.pyx":46
  *                 for ii in range(field_height):
  *                     for jj in range(field_width):
  *                         row = c * field_width * field_height + ii * field_height + jj             # <<<<<<<<<<<<<<
@@ -4476,7 +4476,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
  */
             __pyx_v_row = ((((__pyx_v_c * __pyx_v_field_width) * __pyx_v_field_height) + (__pyx_v_ii * __pyx_v_field_height)) + __pyx_v_jj);
 
-            /* "utils/im2col/im2col_cython.pyx":47
+            /* "fine/utils/im2col/im2col_cython.pyx":47
  *                     for jj in range(field_width):
  *                         row = c * field_width * field_height + ii * field_height + jj
  *                         for i in range(N):             # <<<<<<<<<<<<<<
@@ -4488,7 +4488,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_i = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":48
+              /* "fine/utils/im2col/im2col_cython.pyx":48
  *                         row = c * field_width * field_height + ii * field_height + jj
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i             # <<<<<<<<<<<<<<
@@ -4497,7 +4497,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
  */
               __pyx_v_col = ((((__pyx_v_yy * __pyx_v_WW) * __pyx_v_N) + (__pyx_v_xx * __pyx_v_N)) + __pyx_v_i);
 
-              /* "utils/im2col/im2col_cython.pyx":49
+              /* "fine/utils/im2col/im2col_cython.pyx":49
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]             # <<<<<<<<<<<<<<
@@ -4524,7 +4524,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":35
+  /* "fine/utils/im2col/im2col_cython.pyx":35
  * 
  * @cython.boundscheck(False)
  * cdef int im2col_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -4543,7 +4543,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4554,7 +4554,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   return __pyx_r;
 }
 
-static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
+static int __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_im2col_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_ii;
   int __pyx_v_jj;
@@ -4616,7 +4616,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":41
+  /* "fine/utils/im2col/im2col_cython.pyx":41
  *     cdef int c, ii, jj, row, yy, xx, i, col
  * 
  *     for c in range(C):             # <<<<<<<<<<<<<<
@@ -4628,7 +4628,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_c = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":42
+    /* "fine/utils/im2col/im2col_cython.pyx":42
  * 
  *     for c in range(C):
  *         for yy in range(HH):             # <<<<<<<<<<<<<<
@@ -4640,7 +4640,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_yy = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":43
+      /* "fine/utils/im2col/im2col_cython.pyx":43
  *     for c in range(C):
  *         for yy in range(HH):
  *             for xx in range(WW):             # <<<<<<<<<<<<<<
@@ -4652,7 +4652,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_xx = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":44
+        /* "fine/utils/im2col/im2col_cython.pyx":44
  *         for yy in range(HH):
  *             for xx in range(WW):
  *                 for ii in range(field_height):             # <<<<<<<<<<<<<<
@@ -4664,7 +4664,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_ii = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":45
+          /* "fine/utils/im2col/im2col_cython.pyx":45
  *             for xx in range(WW):
  *                 for ii in range(field_height):
  *                     for jj in range(field_width):             # <<<<<<<<<<<<<<
@@ -4676,7 +4676,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_jj = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":46
+            /* "fine/utils/im2col/im2col_cython.pyx":46
  *                 for ii in range(field_height):
  *                     for jj in range(field_width):
  *                         row = c * field_width * field_height + ii * field_height + jj             # <<<<<<<<<<<<<<
@@ -4685,7 +4685,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
  */
             __pyx_v_row = ((((__pyx_v_c * __pyx_v_field_width) * __pyx_v_field_height) + (__pyx_v_ii * __pyx_v_field_height)) + __pyx_v_jj);
 
-            /* "utils/im2col/im2col_cython.pyx":47
+            /* "fine/utils/im2col/im2col_cython.pyx":47
  *                     for jj in range(field_width):
  *                         row = c * field_width * field_height + ii * field_height + jj
  *                         for i in range(N):             # <<<<<<<<<<<<<<
@@ -4697,7 +4697,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_i = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":48
+              /* "fine/utils/im2col/im2col_cython.pyx":48
  *                         row = c * field_width * field_height + ii * field_height + jj
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i             # <<<<<<<<<<<<<<
@@ -4706,7 +4706,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
  */
               __pyx_v_col = ((((__pyx_v_yy * __pyx_v_WW) * __pyx_v_N) + (__pyx_v_xx * __pyx_v_N)) + __pyx_v_i);
 
-              /* "utils/im2col/im2col_cython.pyx":49
+              /* "fine/utils/im2col/im2col_cython.pyx":49
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]             # <<<<<<<<<<<<<<
@@ -4733,7 +4733,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":35
+  /* "fine/utils/im2col/im2col_cython.pyx":35
  * 
  * @cython.boundscheck(False)
  * cdef int im2col_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -4752,7 +4752,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.im2col_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.im2col_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4763,7 +4763,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
   return __pyx_r;
 }
 
-/* "utils/im2col/im2col_cython.pyx":51
+/* "fine/utils/im2col/im2col_cython.pyx":51
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]
  * 
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -4772,9 +4772,9 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_im2col_cython_inner(PyArra
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5utils_13im2col_cython_3col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5utils_13im2col_cython_3col2im_cython = {"col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_5utils_13im2col_cython_3col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5utils_13im2col_cython_3col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_3col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4fine_5utils_13im2col_cython_3col2im_cython = {"col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_4fine_5utils_13im2col_cython_3col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_3col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_signatures = 0;
   PyObject *__pyx_v_args = 0;
   PyObject *__pyx_v_kwargs = 0;
@@ -4847,18 +4847,18 @@ static PyObject *__pyx_pw_5utils_13im2col_cython_3col2im_cython(PyObject *__pyx_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__pyx_fused_cpdef", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 51, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_2col2im_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_2col2im_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
   PyObject *__pyx_v_dest_sig = NULL;
   Py_ssize_t __pyx_v_i;
   PyTypeObject *__pyx_v_ndarray = 0;
@@ -5286,7 +5286,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED Py
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_dest_sig);
@@ -5305,9 +5305,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_2col2im_cython(CYTHON_UNUSED Py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_13col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_13col2im_cython = {"__pyx_fuse_0col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_13col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_13col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_13col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_13col2im_cython = {"__pyx_fuse_0col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_13col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_13col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_cols = 0;
   int __pyx_v_N;
   int __pyx_v_C;
@@ -5435,12 +5435,12 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_13col2im_cython(PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("col2im_cython", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 51, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cols), __pyx_ptype_5numpy_ndarray, 1, "cols", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_12col2im_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_12col2im_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5451,7 +5451,7 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_13col2im_cython(PyO
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
   CYTHON_UNUSED PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_HH;
   int __pyx_v_WW;
@@ -5490,7 +5490,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   }
   __pyx_pybuffernd_cols.diminfo[0].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_cols.diminfo[0].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_cols.diminfo[1].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_cols.diminfo[1].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[1];
 
-  /* "utils/im2col/im2col_cython.pyx":53
+  /* "fine/utils/im2col/im2col_cython.pyx":53
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,
  *                   int field_height, int field_width, int padding, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -5544,7 +5544,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   __pyx_v_x = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":54
+  /* "fine/utils/im2col/im2col_cython.pyx":54
  *                   int field_height, int field_width, int padding, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1             # <<<<<<<<<<<<<<
@@ -5562,7 +5562,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   }
   __pyx_v_HH = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":55
+  /* "fine/utils/im2col/im2col_cython.pyx":55
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1             # <<<<<<<<<<<<<<
@@ -5580,7 +5580,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   }
   __pyx_v_WW = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":56
+  /* "fine/utils/im2col/im2col_cython.pyx":56
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),             # <<<<<<<<<<<<<<
@@ -5620,7 +5620,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":57
+  /* "fine/utils/im2col/im2col_cython.pyx":57
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),
  *                                                          dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -5634,7 +5634,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":56
+  /* "fine/utils/im2col/im2col_cython.pyx":56
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),             # <<<<<<<<<<<<<<
@@ -5660,16 +5660,16 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":59
+  /* "fine/utils/im2col/im2col_cython.pyx":59
  *                                                          dtype=cols.dtype)
  * 
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,             # <<<<<<<<<<<<<<
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:
  */
-  __pyx_t_9 = __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_9 = __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":61
+  /* "fine/utils/im2col/im2col_cython.pyx":61
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:             # <<<<<<<<<<<<<<
@@ -5679,7 +5679,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   __pyx_t_10 = ((__pyx_v_padding > 0) != 0);
   if (__pyx_t_10) {
 
-    /* "utils/im2col/im2col_cython.pyx":62
+    /* "fine/utils/im2col/im2col_cython.pyx":62
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:
  *         return x_padded[:, :, padding:-padding, padding:-padding]             # <<<<<<<<<<<<<<
@@ -5724,7 +5724,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "utils/im2col/im2col_cython.pyx":61
+    /* "fine/utils/im2col/im2col_cython.pyx":61
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:             # <<<<<<<<<<<<<<
@@ -5733,7 +5733,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
  */
   }
 
-  /* "utils/im2col/im2col_cython.pyx":63
+  /* "fine/utils/im2col/im2col_cython.pyx":63
  *     if padding > 0:
  *         return x_padded[:, :, padding:-padding, padding:-padding]
  *     return x_padded             # <<<<<<<<<<<<<<
@@ -5745,7 +5745,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
   __pyx_r = ((PyObject *)__pyx_v_x_padded);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":51
+  /* "fine/utils/im2col/im2col_cython.pyx":51
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]
  * 
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -5768,7 +5768,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -5783,9 +5783,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_12col2im_cython(CYTHON_UNUSED P
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_15col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_15col2im_cython = {"__pyx_fuse_1col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_15col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_15col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_15col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_15col2im_cython = {"__pyx_fuse_1col2im_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_15col2im_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_15col2im_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_cols = 0;
   int __pyx_v_N;
   int __pyx_v_C;
@@ -5913,12 +5913,12 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_15col2im_cython(PyO
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("col2im_cython", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 51, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cols), __pyx_ptype_5numpy_ndarray, 1, "cols", 0))) __PYX_ERR(0, 51, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_14col2im_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_14col2im_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5929,7 +5929,7 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_15col2im_cython(PyO
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_field_height, int __pyx_v_field_width, int __pyx_v_padding, int __pyx_v_stride) {
   CYTHON_UNUSED PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_HH;
   int __pyx_v_WW;
@@ -5968,7 +5968,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   }
   __pyx_pybuffernd_cols.diminfo[0].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_cols.diminfo[0].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_cols.diminfo[1].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_cols.diminfo[1].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[1];
 
-  /* "utils/im2col/im2col_cython.pyx":53
+  /* "fine/utils/im2col/im2col_cython.pyx":53
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,
  *                   int field_height, int field_width, int padding, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -6022,7 +6022,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   __pyx_v_x = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":54
+  /* "fine/utils/im2col/im2col_cython.pyx":54
  *                   int field_height, int field_width, int padding, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1             # <<<<<<<<<<<<<<
@@ -6040,7 +6040,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   }
   __pyx_v_HH = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":55
+  /* "fine/utils/im2col/im2col_cython.pyx":55
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1             # <<<<<<<<<<<<<<
@@ -6058,7 +6058,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   }
   __pyx_v_WW = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":56
+  /* "fine/utils/im2col/im2col_cython.pyx":56
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),             # <<<<<<<<<<<<<<
@@ -6098,7 +6098,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":57
+  /* "fine/utils/im2col/im2col_cython.pyx":57
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),
  *                                                          dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -6112,7 +6112,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":56
+  /* "fine/utils/im2col/im2col_cython.pyx":56
  *     cdef int HH = (H + 2 * padding - field_height) / stride + 1
  *     cdef int WW = (W + 2 * padding - field_width) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * padding, W + 2 * padding),             # <<<<<<<<<<<<<<
@@ -6138,16 +6138,16 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":59
+  /* "fine/utils/im2col/im2col_cython.pyx":59
  *                                                          dtype=cols.dtype)
  * 
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,             # <<<<<<<<<<<<<<
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:
  */
-  __pyx_t_9 = __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_9 = __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_field_height, __pyx_v_field_width, __pyx_v_padding, __pyx_v_stride); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":61
+  /* "fine/utils/im2col/im2col_cython.pyx":61
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:             # <<<<<<<<<<<<<<
@@ -6157,7 +6157,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   __pyx_t_10 = ((__pyx_v_padding > 0) != 0);
   if (__pyx_t_10) {
 
-    /* "utils/im2col/im2col_cython.pyx":62
+    /* "fine/utils/im2col/im2col_cython.pyx":62
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:
  *         return x_padded[:, :, padding:-padding, padding:-padding]             # <<<<<<<<<<<<<<
@@ -6202,7 +6202,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "utils/im2col/im2col_cython.pyx":61
+    /* "fine/utils/im2col/im2col_cython.pyx":61
  *     col2im_cython_inner(cols, x_padded, N, C, H, W, HH, WW,
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:             # <<<<<<<<<<<<<<
@@ -6211,7 +6211,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
  */
   }
 
-  /* "utils/im2col/im2col_cython.pyx":63
+  /* "fine/utils/im2col/im2col_cython.pyx":63
  *     if padding > 0:
  *         return x_padded[:, :, padding:-padding, padding:-padding]
  *     return x_padded             # <<<<<<<<<<<<<<
@@ -6223,7 +6223,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   __pyx_r = ((PyObject *)__pyx_v_x_padded);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":51
+  /* "fine/utils/im2col/im2col_cython.pyx":51
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]
  * 
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -6246,7 +6246,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6260,7 +6260,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "utils/im2col/im2col_cython.pyx":66
+/* "fine/utils/im2col/im2col_cython.pyx":66
  * 
  * @cython.boundscheck(False)
  * cdef int col2im_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -6268,7 +6268,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_14col2im_cython(CYTHON_UNUSED P
  *                              int N, int C, int H, int W, int HH, int WW,
  */
 
-static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
+static int __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_ii;
   int __pyx_v_jj;
@@ -6330,7 +6330,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":72
+  /* "fine/utils/im2col/im2col_cython.pyx":72
  *     cdef int c, ii, jj, row, yy, xx, i, col
  * 
  *     for c in range(C):             # <<<<<<<<<<<<<<
@@ -6342,7 +6342,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_c = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":73
+    /* "fine/utils/im2col/im2col_cython.pyx":73
  * 
  *     for c in range(C):
  *         for ii in range(field_height):             # <<<<<<<<<<<<<<
@@ -6354,7 +6354,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_ii = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":74
+      /* "fine/utils/im2col/im2col_cython.pyx":74
  *     for c in range(C):
  *         for ii in range(field_height):
  *             for jj in range(field_width):             # <<<<<<<<<<<<<<
@@ -6366,7 +6366,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_jj = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":75
+        /* "fine/utils/im2col/im2col_cython.pyx":75
  *         for ii in range(field_height):
  *             for jj in range(field_width):
  *                 row = c * field_width * field_height + ii * field_height + jj             # <<<<<<<<<<<<<<
@@ -6375,7 +6375,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
  */
         __pyx_v_row = ((((__pyx_v_c * __pyx_v_field_width) * __pyx_v_field_height) + (__pyx_v_ii * __pyx_v_field_height)) + __pyx_v_jj);
 
-        /* "utils/im2col/im2col_cython.pyx":76
+        /* "fine/utils/im2col/im2col_cython.pyx":76
  *             for jj in range(field_width):
  *                 row = c * field_width * field_height + ii * field_height + jj
  *                 for yy in range(HH):             # <<<<<<<<<<<<<<
@@ -6387,7 +6387,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_yy = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":77
+          /* "fine/utils/im2col/im2col_cython.pyx":77
  *                 row = c * field_width * field_height + ii * field_height + jj
  *                 for yy in range(HH):
  *                     for xx in range(WW):             # <<<<<<<<<<<<<<
@@ -6399,7 +6399,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_xx = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":78
+            /* "fine/utils/im2col/im2col_cython.pyx":78
  *                 for yy in range(HH):
  *                     for xx in range(WW):
  *                         for i in range(N):             # <<<<<<<<<<<<<<
@@ -6411,7 +6411,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_i = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":79
+              /* "fine/utils/im2col/im2col_cython.pyx":79
  *                     for xx in range(WW):
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i             # <<<<<<<<<<<<<<
@@ -6420,7 +6420,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
  */
               __pyx_v_col = ((((__pyx_v_yy * __pyx_v_WW) * __pyx_v_N) + (__pyx_v_xx * __pyx_v_N)) + __pyx_v_i);
 
-              /* "utils/im2col/im2col_cython.pyx":80
+              /* "fine/utils/im2col/im2col_cython.pyx":80
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i
  *                             x_padded[i, c, stride * yy + ii, stride * xx + jj] += cols[row, col]             # <<<<<<<<<<<<<<
@@ -6447,7 +6447,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":66
+  /* "fine/utils/im2col/im2col_cython.pyx":66
  * 
  * @cython.boundscheck(False)
  * cdef int col2im_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -6466,7 +6466,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6477,7 +6477,7 @@ static int __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   return __pyx_r;
 }
 
-static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
+static int __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_field_height, int __pyx_v_field_width, CYTHON_UNUSED int __pyx_v_padding, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_ii;
   int __pyx_v_jj;
@@ -6539,7 +6539,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":72
+  /* "fine/utils/im2col/im2col_cython.pyx":72
  *     cdef int c, ii, jj, row, yy, xx, i, col
  * 
  *     for c in range(C):             # <<<<<<<<<<<<<<
@@ -6551,7 +6551,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_c = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":73
+    /* "fine/utils/im2col/im2col_cython.pyx":73
  * 
  *     for c in range(C):
  *         for ii in range(field_height):             # <<<<<<<<<<<<<<
@@ -6563,7 +6563,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_ii = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":74
+      /* "fine/utils/im2col/im2col_cython.pyx":74
  *     for c in range(C):
  *         for ii in range(field_height):
  *             for jj in range(field_width):             # <<<<<<<<<<<<<<
@@ -6575,7 +6575,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_jj = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":75
+        /* "fine/utils/im2col/im2col_cython.pyx":75
  *         for ii in range(field_height):
  *             for jj in range(field_width):
  *                 row = c * field_width * field_height + ii * field_height + jj             # <<<<<<<<<<<<<<
@@ -6584,7 +6584,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
  */
         __pyx_v_row = ((((__pyx_v_c * __pyx_v_field_width) * __pyx_v_field_height) + (__pyx_v_ii * __pyx_v_field_height)) + __pyx_v_jj);
 
-        /* "utils/im2col/im2col_cython.pyx":76
+        /* "fine/utils/im2col/im2col_cython.pyx":76
  *             for jj in range(field_width):
  *                 row = c * field_width * field_height + ii * field_height + jj
  *                 for yy in range(HH):             # <<<<<<<<<<<<<<
@@ -6596,7 +6596,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_yy = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":77
+          /* "fine/utils/im2col/im2col_cython.pyx":77
  *                 row = c * field_width * field_height + ii * field_height + jj
  *                 for yy in range(HH):
  *                     for xx in range(WW):             # <<<<<<<<<<<<<<
@@ -6608,7 +6608,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_xx = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":78
+            /* "fine/utils/im2col/im2col_cython.pyx":78
  *                 for yy in range(HH):
  *                     for xx in range(WW):
  *                         for i in range(N):             # <<<<<<<<<<<<<<
@@ -6620,7 +6620,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_i = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":79
+              /* "fine/utils/im2col/im2col_cython.pyx":79
  *                     for xx in range(WW):
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i             # <<<<<<<<<<<<<<
@@ -6629,7 +6629,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
  */
               __pyx_v_col = ((((__pyx_v_yy * __pyx_v_WW) * __pyx_v_N) + (__pyx_v_xx * __pyx_v_N)) + __pyx_v_i);
 
-              /* "utils/im2col/im2col_cython.pyx":80
+              /* "fine/utils/im2col/im2col_cython.pyx":80
  *                         for i in range(N):
  *                             col = yy * WW * N + xx * N + i
  *                             x_padded[i, c, stride * yy + ii, stride * xx + jj] += cols[row, col]             # <<<<<<<<<<<<<<
@@ -6656,7 +6656,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":66
+  /* "fine/utils/im2col/im2col_cython.pyx":66
  * 
  * @cython.boundscheck(False)
  * cdef int col2im_cython_inner(np.ndarray[DTYPE_t, ndim=2] cols,             # <<<<<<<<<<<<<<
@@ -6675,7 +6675,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6686,7 +6686,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
   return __pyx_r;
 }
 
-/* "utils/im2col/im2col_cython.pyx":83
+/* "fine/utils/im2col/im2col_cython.pyx":83
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * cdef col2im_6d_cython_inner(np.ndarray[DTYPE_t, ndim=6] cols,             # <<<<<<<<<<<<<<
@@ -6694,7 +6694,7 @@ static int __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_cython_inner(PyArra
  *                             int N, int C, int H, int W, int HH, int WW,
  */
 
-static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_out_h, int __pyx_v_out_w, CYTHON_UNUSED int __pyx_v_pad, int __pyx_v_stride) {
+static PyObject *__pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_out_h, int __pyx_v_out_w, CYTHON_UNUSED int __pyx_v_pad, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_hh;
   int __pyx_v_ww;
@@ -6758,7 +6758,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":88
+  /* "fine/utils/im2col/im2col_cython.pyx":88
  *                             int out_h, int out_w, int pad, int stride):
  *     cdef int c, hh, ww, n, h, w
  *     for n in range(N):             # <<<<<<<<<<<<<<
@@ -6770,7 +6770,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_n = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":89
+    /* "fine/utils/im2col/im2col_cython.pyx":89
  *     cdef int c, hh, ww, n, h, w
  *     for n in range(N):
  *         for c in range(C):             # <<<<<<<<<<<<<<
@@ -6782,7 +6782,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_c = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":90
+      /* "fine/utils/im2col/im2col_cython.pyx":90
  *     for n in range(N):
  *         for c in range(C):
  *             for hh in range(HH):             # <<<<<<<<<<<<<<
@@ -6794,7 +6794,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_hh = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":91
+        /* "fine/utils/im2col/im2col_cython.pyx":91
  *         for c in range(C):
  *             for hh in range(HH):
  *                 for ww in range(WW):             # <<<<<<<<<<<<<<
@@ -6806,7 +6806,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_ww = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":92
+          /* "fine/utils/im2col/im2col_cython.pyx":92
  *             for hh in range(HH):
  *                 for ww in range(WW):
  *                     for h in range(out_h):             # <<<<<<<<<<<<<<
@@ -6818,7 +6818,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_h = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":93
+            /* "fine/utils/im2col/im2col_cython.pyx":93
  *                 for ww in range(WW):
  *                     for h in range(out_h):
  *                         for w in range(out_w):             # <<<<<<<<<<<<<<
@@ -6830,7 +6830,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_w = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":94
+              /* "fine/utils/im2col/im2col_cython.pyx":94
  *                     for h in range(out_h):
  *                         for w in range(out_w):
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]             # <<<<<<<<<<<<<<
@@ -6855,7 +6855,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":83
+  /* "fine/utils/im2col/im2col_cython.pyx":83
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * cdef col2im_6d_cython_inner(np.ndarray[DTYPE_t, ndim=6] cols,             # <<<<<<<<<<<<<<
@@ -6874,7 +6874,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6886,7 +6886,7 @@ static PyObject *__pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   return __pyx_r;
 }
 
-static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_out_h, int __pyx_v_out_w, CYTHON_UNUSED int __pyx_v_pad, int __pyx_v_stride) {
+static PyObject *__pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(PyArrayObject *__pyx_v_cols, PyArrayObject *__pyx_v_x_padded, int __pyx_v_N, int __pyx_v_C, CYTHON_UNUSED int __pyx_v_H, CYTHON_UNUSED int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_out_h, int __pyx_v_out_w, CYTHON_UNUSED int __pyx_v_pad, int __pyx_v_stride) {
   int __pyx_v_c;
   int __pyx_v_hh;
   int __pyx_v_ww;
@@ -6950,7 +6950,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   }
   __pyx_pybuffernd_x_padded.diminfo[0].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_x_padded.diminfo[0].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_x_padded.diminfo[1].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_x_padded.diminfo[1].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_x_padded.diminfo[2].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_x_padded.diminfo[2].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_x_padded.diminfo[3].strides = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_x_padded.diminfo[3].shape = __pyx_pybuffernd_x_padded.rcbuffer->pybuffer.shape[3];
 
-  /* "utils/im2col/im2col_cython.pyx":88
+  /* "fine/utils/im2col/im2col_cython.pyx":88
  *                             int out_h, int out_w, int pad, int stride):
  *     cdef int c, hh, ww, n, h, w
  *     for n in range(N):             # <<<<<<<<<<<<<<
@@ -6962,7 +6962,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_n = __pyx_t_3;
 
-    /* "utils/im2col/im2col_cython.pyx":89
+    /* "fine/utils/im2col/im2col_cython.pyx":89
  *     cdef int c, hh, ww, n, h, w
  *     for n in range(N):
  *         for c in range(C):             # <<<<<<<<<<<<<<
@@ -6974,7 +6974,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_c = __pyx_t_6;
 
-      /* "utils/im2col/im2col_cython.pyx":90
+      /* "fine/utils/im2col/im2col_cython.pyx":90
  *     for n in range(N):
  *         for c in range(C):
  *             for hh in range(HH):             # <<<<<<<<<<<<<<
@@ -6986,7 +6986,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_hh = __pyx_t_9;
 
-        /* "utils/im2col/im2col_cython.pyx":91
+        /* "fine/utils/im2col/im2col_cython.pyx":91
  *         for c in range(C):
  *             for hh in range(HH):
  *                 for ww in range(WW):             # <<<<<<<<<<<<<<
@@ -6998,7 +6998,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
         for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
           __pyx_v_ww = __pyx_t_12;
 
-          /* "utils/im2col/im2col_cython.pyx":92
+          /* "fine/utils/im2col/im2col_cython.pyx":92
  *             for hh in range(HH):
  *                 for ww in range(WW):
  *                     for h in range(out_h):             # <<<<<<<<<<<<<<
@@ -7010,7 +7010,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
           for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
             __pyx_v_h = __pyx_t_15;
 
-            /* "utils/im2col/im2col_cython.pyx":93
+            /* "fine/utils/im2col/im2col_cython.pyx":93
  *                 for ww in range(WW):
  *                     for h in range(out_h):
  *                         for w in range(out_w):             # <<<<<<<<<<<<<<
@@ -7022,7 +7022,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
             for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
               __pyx_v_w = __pyx_t_18;
 
-              /* "utils/im2col/im2col_cython.pyx":94
+              /* "fine/utils/im2col/im2col_cython.pyx":94
  *                     for h in range(out_h):
  *                         for w in range(out_w):
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]             # <<<<<<<<<<<<<<
@@ -7047,7 +7047,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     }
   }
 
-  /* "utils/im2col/im2col_cython.pyx":83
+  /* "fine/utils/im2col/im2col_cython.pyx":83
  * @cython.boundscheck(False)
  * @cython.wraparound(False)
  * cdef col2im_6d_cython_inner(np.ndarray[DTYPE_t, ndim=6] cols,             # <<<<<<<<<<<<<<
@@ -7066,7 +7066,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython_inner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -7078,7 +7078,7 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
   return __pyx_r;
 }
 
-/* "utils/im2col/im2col_cython.pyx":96
+/* "fine/utils/im2col/im2col_cython.pyx":96
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]
  * 
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -7087,9 +7087,9 @@ static PyObject *__pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inn
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5utils_13im2col_cython_5col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_5utils_13im2col_cython_5col2im_6d_cython = {"col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_5utils_13im2col_cython_5col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_5utils_13im2col_cython_5col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_5col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_4fine_5utils_13im2col_cython_5col2im_6d_cython = {"col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_4fine_5utils_13im2col_cython_5col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_4fine_5utils_13im2col_cython_5col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_signatures = 0;
   PyObject *__pyx_v_args = 0;
   PyObject *__pyx_v_kwargs = 0;
@@ -7162,18 +7162,18 @@ static PyObject *__pyx_pw_5utils_13im2col_cython_5col2im_6d_cython(PyObject *__p
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__pyx_fused_cpdef", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 96, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_4col2im_6d_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_4col2im_6d_cython(__pyx_self, __pyx_v_signatures, __pyx_v_args, __pyx_v_kwargs, __pyx_v_defaults);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_signatures, PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs, CYTHON_UNUSED PyObject *__pyx_v_defaults) {
   PyObject *__pyx_v_dest_sig = NULL;
   Py_ssize_t __pyx_v_i;
   PyTypeObject *__pyx_v_ndarray = 0;
@@ -7601,7 +7601,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.__pyx_fused_cpdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_dest_sig);
@@ -7620,9 +7620,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_4col2im_6d_cython(CYTHON_UNUSED
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_19col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_19col2im_6d_cython = {"__pyx_fuse_0col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_19col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_19col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_19col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_19col2im_6d_cython = {"__pyx_fuse_0col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_19col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_0__pyx_pw_4fine_5utils_13im2col_cython_19col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_cols = 0;
   int __pyx_v_N;
   int __pyx_v_C;
@@ -7750,12 +7750,12 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_19col2im_6d_cython(
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("col2im_6d_cython", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 96, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cols), __pyx_ptype_5numpy_ndarray, 1, "cols", 0))) __PYX_ERR(0, 96, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_pad, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_18col2im_6d_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_pad, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -7766,7 +7766,7 @@ static PyObject *__pyx_fuse_0__pyx_pw_5utils_13im2col_cython_19col2im_6d_cython(
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride) {
   CYTHON_UNUSED PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_out_h;
   int __pyx_v_out_w;
@@ -7804,7 +7804,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_pybuffernd_cols.diminfo[0].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_cols.diminfo[0].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_cols.diminfo[1].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_cols.diminfo[1].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_cols.diminfo[2].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_cols.diminfo[2].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_cols.diminfo[3].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_cols.diminfo[3].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[3]; __pyx_pybuffernd_cols.diminfo[4].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[4]; __pyx_pybuffernd_cols.diminfo[4].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[4]; __pyx_pybuffernd_cols.diminfo[5].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[5]; __pyx_pybuffernd_cols.diminfo[5].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[5];
 
-  /* "utils/im2col/im2col_cython.pyx":98
+  /* "fine/utils/im2col/im2col_cython.pyx":98
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,
  *                      int HH, int WW, int pad, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -7858,7 +7858,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   __pyx_v_x = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":99
+  /* "fine/utils/im2col/im2col_cython.pyx":99
  *                      int HH, int WW, int pad, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1             # <<<<<<<<<<<<<<
@@ -7876,7 +7876,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_v_out_h = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":100
+  /* "fine/utils/im2col/im2col_cython.pyx":100
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1             # <<<<<<<<<<<<<<
@@ -7894,7 +7894,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_v_out_w = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":101
+  /* "fine/utils/im2col/im2col_cython.pyx":101
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),             # <<<<<<<<<<<<<<
@@ -7934,7 +7934,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":102
+  /* "fine/utils/im2col/im2col_cython.pyx":102
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),
  *                                                          dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -7948,7 +7948,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":101
+  /* "fine/utils/im2col/im2col_cython.pyx":101
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),             # <<<<<<<<<<<<<<
@@ -7974,18 +7974,18 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":104
+  /* "fine/utils/im2col/im2col_cython.pyx":104
  *                                                          dtype=cols.dtype)
  * 
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)             # <<<<<<<<<<<<<<
  * 
  *     if pad > 0:
  */
-  __pyx_t_2 = __pyx_fuse_0__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_out_h, __pyx_v_out_w, __pyx_v_pad, __pyx_v_stride); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_2 = __pyx_fuse_0__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_out_h, __pyx_v_out_w, __pyx_v_pad, __pyx_v_stride); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":106
+  /* "fine/utils/im2col/im2col_cython.pyx":106
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)
  * 
  *     if pad > 0:             # <<<<<<<<<<<<<<
@@ -7995,7 +7995,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   __pyx_t_9 = ((__pyx_v_pad > 0) != 0);
   if (__pyx_t_9) {
 
-    /* "utils/im2col/im2col_cython.pyx":107
+    /* "fine/utils/im2col/im2col_cython.pyx":107
  * 
  *     if pad > 0:
  *         return x_padded[:, :, pad:-pad, pad:-pad]             # <<<<<<<<<<<<<<
@@ -8039,7 +8039,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "utils/im2col/im2col_cython.pyx":106
+    /* "fine/utils/im2col/im2col_cython.pyx":106
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)
  * 
  *     if pad > 0:             # <<<<<<<<<<<<<<
@@ -8048,7 +8048,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
  */
   }
 
-  /* "utils/im2col/im2col_cython.pyx":108
+  /* "fine/utils/im2col/im2col_cython.pyx":108
  *     if pad > 0:
  *         return x_padded[:, :, pad:-pad, pad:-pad]
  *     return x_padded             # <<<<<<<<<<<<<<
@@ -8058,7 +8058,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
   __pyx_r = ((PyObject *)__pyx_v_x_padded);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":96
+  /* "fine/utils/im2col/im2col_cython.pyx":96
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]
  * 
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -8081,7 +8081,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -8096,9 +8096,9 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_18col2im_6d_cython(CYTHON_UNUSE
 }
 
 /* Python wrapper */
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_21col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_21col2im_6d_cython = {"__pyx_fuse_1col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_21col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_21col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_21col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_21col2im_6d_cython = {"__pyx_fuse_1col2im_6d_cython", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_21col2im_6d_cython, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_fuse_1__pyx_pw_4fine_5utils_13im2col_cython_21col2im_6d_cython(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_cols = 0;
   int __pyx_v_N;
   int __pyx_v_C;
@@ -8226,12 +8226,12 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_21col2im_6d_cython(
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("col2im_6d_cython", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 96, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cols), __pyx_ptype_5numpy_ndarray, 1, "cols", 0))) __PYX_ERR(0, 96, __pyx_L1_error)
-  __pyx_r = __pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_pad, __pyx_v_stride);
+  __pyx_r = __pyx_pf_4fine_5utils_13im2col_cython_20col2im_6d_cython(__pyx_self, __pyx_v_cols, __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_pad, __pyx_v_stride);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8242,7 +8242,7 @@ static PyObject *__pyx_fuse_1__pyx_pw_5utils_13im2col_cython_21col2im_6d_cython(
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride) {
+static PyObject *__pyx_pf_4fine_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cols, int __pyx_v_N, int __pyx_v_C, int __pyx_v_H, int __pyx_v_W, int __pyx_v_HH, int __pyx_v_WW, int __pyx_v_pad, int __pyx_v_stride) {
   CYTHON_UNUSED PyArrayObject *__pyx_v_x = 0;
   int __pyx_v_out_h;
   int __pyx_v_out_w;
@@ -8280,7 +8280,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_pybuffernd_cols.diminfo[0].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_cols.diminfo[0].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_cols.diminfo[1].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_cols.diminfo[1].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[1]; __pyx_pybuffernd_cols.diminfo[2].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[2]; __pyx_pybuffernd_cols.diminfo[2].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[2]; __pyx_pybuffernd_cols.diminfo[3].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[3]; __pyx_pybuffernd_cols.diminfo[3].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[3]; __pyx_pybuffernd_cols.diminfo[4].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[4]; __pyx_pybuffernd_cols.diminfo[4].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[4]; __pyx_pybuffernd_cols.diminfo[5].strides = __pyx_pybuffernd_cols.rcbuffer->pybuffer.strides[5]; __pyx_pybuffernd_cols.diminfo[5].shape = __pyx_pybuffernd_cols.rcbuffer->pybuffer.shape[5];
 
-  /* "utils/im2col/im2col_cython.pyx":98
+  /* "fine/utils/im2col/im2col_cython.pyx":98
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,
  *                      int HH, int WW, int pad, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -8334,7 +8334,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   __pyx_v_x = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":99
+  /* "fine/utils/im2col/im2col_cython.pyx":99
  *                      int HH, int WW, int pad, int stride):
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1             # <<<<<<<<<<<<<<
@@ -8352,7 +8352,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_v_out_h = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":100
+  /* "fine/utils/im2col/im2col_cython.pyx":100
  *     cdef np.ndarray x = np.empty((N, C, H, W), dtype=cols.dtype)
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1             # <<<<<<<<<<<<<<
@@ -8370,7 +8370,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   }
   __pyx_v_out_w = (__Pyx_div_long(__pyx_t_7, __pyx_v_stride) + 1);
 
-  /* "utils/im2col/im2col_cython.pyx":101
+  /* "fine/utils/im2col/im2col_cython.pyx":101
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),             # <<<<<<<<<<<<<<
@@ -8410,7 +8410,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":102
+  /* "fine/utils/im2col/im2col_cython.pyx":102
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),
  *                                                          dtype=cols.dtype)             # <<<<<<<<<<<<<<
@@ -8424,7 +8424,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":101
+  /* "fine/utils/im2col/im2col_cython.pyx":101
  *     cdef int out_h = (H + 2 * pad - HH) / stride + 1
  *     cdef int out_w = (W + 2 * pad - WW) / stride + 1
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.zeros((N, C, H + 2 * pad, W + 2 * pad),             # <<<<<<<<<<<<<<
@@ -8450,18 +8450,18 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   __pyx_v_x_padded = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":104
+  /* "fine/utils/im2col/im2col_cython.pyx":104
  *                                                          dtype=cols.dtype)
  * 
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)             # <<<<<<<<<<<<<<
  * 
  *     if pad > 0:
  */
-  __pyx_t_2 = __pyx_fuse_1__pyx_f_5utils_13im2col_cython_col2im_6d_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_out_h, __pyx_v_out_w, __pyx_v_pad, __pyx_v_stride); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_2 = __pyx_fuse_1__pyx_f_4fine_5utils_13im2col_cython_col2im_6d_cython_inner(((PyArrayObject *)__pyx_v_cols), ((PyArrayObject *)__pyx_v_x_padded), __pyx_v_N, __pyx_v_C, __pyx_v_H, __pyx_v_W, __pyx_v_HH, __pyx_v_WW, __pyx_v_out_h, __pyx_v_out_w, __pyx_v_pad, __pyx_v_stride); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":106
+  /* "fine/utils/im2col/im2col_cython.pyx":106
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)
  * 
  *     if pad > 0:             # <<<<<<<<<<<<<<
@@ -8471,7 +8471,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   __pyx_t_9 = ((__pyx_v_pad > 0) != 0);
   if (__pyx_t_9) {
 
-    /* "utils/im2col/im2col_cython.pyx":107
+    /* "fine/utils/im2col/im2col_cython.pyx":107
  * 
  *     if pad > 0:
  *         return x_padded[:, :, pad:-pad, pad:-pad]             # <<<<<<<<<<<<<<
@@ -8515,7 +8515,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
     __pyx_t_6 = 0;
     goto __pyx_L0;
 
-    /* "utils/im2col/im2col_cython.pyx":106
+    /* "fine/utils/im2col/im2col_cython.pyx":106
  *     col2im_6d_cython_inner(cols, x_padded, N, C, H, W, HH, WW, out_h, out_w, pad, stride)
  * 
  *     if pad > 0:             # <<<<<<<<<<<<<<
@@ -8524,7 +8524,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
  */
   }
 
-  /* "utils/im2col/im2col_cython.pyx":108
+  /* "fine/utils/im2col/im2col_cython.pyx":108
  *     if pad > 0:
  *         return x_padded[:, :, pad:-pad, pad:-pad]
  *     return x_padded             # <<<<<<<<<<<<<<
@@ -8534,7 +8534,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
   __pyx_r = ((PyObject *)__pyx_v_x_padded);
   goto __pyx_L0;
 
-  /* "utils/im2col/im2col_cython.pyx":96
+  /* "fine/utils/im2col/im2col_cython.pyx":96
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]
  * 
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -8557,7 +8557,7 @@ static PyObject *__pyx_pf_5utils_13im2col_cython_20col2im_6d_cython(CYTHON_UNUSE
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_cols.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_x_padded.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fine.utils.im2col_cython.col2im_6d_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -22554,7 +22554,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "utils.im2col_cython.array", /*tp_name*/
+  "fine.utils.im2col_cython.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -22676,7 +22676,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "utils.im2col_cython.Enum", /*tp_name*/
+  "fine.utils.im2col_cython.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -22940,7 +22940,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "utils.im2col_cython.memoryview", /*tp_name*/
+  "fine.utils.im2col_cython.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -23081,7 +23081,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "utils.im2col_cython._memoryviewslice", /*tp_name*/
+  "fine.utils.im2col_cython._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -23263,6 +23263,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_field_height, __pyx_k_field_height, sizeof(__pyx_k_field_height), 0, 0, 1, 1},
   {&__pyx_n_s_field_width, __pyx_k_field_width, sizeof(__pyx_k_field_width), 0, 0, 1, 1},
+  {&__pyx_n_s_fine_utils_im2col_cython, __pyx_k_fine_utils_im2col_cython, sizeof(__pyx_k_fine_utils_im2col_cython), 0, 0, 1, 1},
+  {&__pyx_kp_s_fine_utils_im2col_im2col_cython, __pyx_k_fine_utils_im2col_im2col_cython, sizeof(__pyx_k_fine_utils_im2col_im2col_cython), 0, 0, 1, 0},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
   {&__pyx_n_s_float32_t, __pyx_k_float32_t, sizeof(__pyx_k_float32_t), 0, 0, 1, 1},
   {&__pyx_n_s_float64_t, __pyx_k_float64_t, sizeof(__pyx_k_float64_t), 0, 0, 1, 1},
@@ -23332,8 +23334,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_unable_to_allocate_shape_and_str, __pyx_k_unable_to_allocate_shape_and_str, sizeof(__pyx_k_unable_to_allocate_shape_and_str), 0, 0, 1, 0},
   {&__pyx_n_s_unpack, __pyx_k_unpack, sizeof(__pyx_k_unpack), 0, 0, 1, 1},
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
-  {&__pyx_n_s_utils_im2col_cython, __pyx_k_utils_im2col_cython, sizeof(__pyx_k_utils_im2col_cython), 0, 0, 1, 1},
-  {&__pyx_kp_s_utils_im2col_im2col_cython_pyx, __pyx_k_utils_im2col_im2col_cython_pyx, sizeof(__pyx_k_utils_im2col_im2col_cython_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_x, __pyx_k_x, sizeof(__pyx_k_x), 0, 0, 1, 1},
   {&__pyx_n_s_x_padded, __pyx_k_x_padded, sizeof(__pyx_k_x_padded), 0, 0, 1, 1},
   {&__pyx_n_s_zeros, __pyx_k_zeros, sizeof(__pyx_k_zeros), 0, 0, 1, 1},
@@ -23358,7 +23358,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "utils/im2col/im2col_cython.pyx":12
+  /* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -23372,7 +23372,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "utils/im2col/im2col_cython.pyx":24
+  /* "fine/utils/im2col/im2col_cython.pyx":24
  *     cdef int p = padding
  *     cdef np.ndarray[DTYPE_t, ndim=4] x_padded = np.pad(x,
  *                                                        ((0, 0), (0, 0), (p, p), (p, p)), mode='constant')             # <<<<<<<<<<<<<<
@@ -23383,7 +23383,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "utils/im2col/im2col_cython.pyx":62
+  /* "fine/utils/im2col/im2col_cython.pyx":62
  *                         field_height, field_width, padding, stride)
  *     if padding > 0:
  *         return x_padded[:, :, padding:-padding, padding:-padding]             # <<<<<<<<<<<<<<
@@ -23403,7 +23403,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_slice__9);
   __Pyx_GIVEREF(__pyx_slice__9);
 
-  /* "utils/im2col/im2col_cython.pyx":107
+  /* "fine/utils/im2col/im2col_cython.pyx":107
  * 
  *     if pad > 0:
  *         return x_padded[:, :, pad:-pad, pad:-pad]             # <<<<<<<<<<<<<<
@@ -23636,7 +23636,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
 
-  /* "utils/im2col/im2col_cython.pyx":12
+  /* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -23646,9 +23646,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__34 = PyTuple_Pack(14, __pyx_n_s_x, __pyx_n_s_field_height, __pyx_n_s_field_width, __pyx_n_s_padding, __pyx_n_s_stride, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_p, __pyx_n_s_x_padded, __pyx_n_s_cols); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
-  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(5, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_utils_im2col_im2col_cython_pyx, __pyx_n_s_im2col_cython, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(5, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fine_utils_im2col_im2col_cython, __pyx_n_s_im2col_cython, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":51
+  /* "fine/utils/im2col/im2col_cython.pyx":51
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]
  * 
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -23658,9 +23658,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__36 = PyTuple_Pack(13, __pyx_n_s_cols, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_field_height, __pyx_n_s_field_width, __pyx_n_s_padding, __pyx_n_s_stride, __pyx_n_s_x, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_x_padded); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__36);
   __Pyx_GIVEREF(__pyx_tuple__36);
-  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_utils_im2col_im2col_cython_pyx, __pyx_n_s_col2im_cython, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__36, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fine_utils_im2col_im2col_cython, __pyx_n_s_col2im_cython, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(0, 51, __pyx_L1_error)
 
-  /* "utils/im2col/im2col_cython.pyx":96
+  /* "fine/utils/im2col/im2col_cython.pyx":96
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]
  * 
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -23670,7 +23670,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__38 = PyTuple_Pack(13, __pyx_n_s_cols, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_pad, __pyx_n_s_stride, __pyx_n_s_x, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_x_padded); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
-  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_utils_im2col_im2col_cython_pyx, __pyx_n_s_col2im_6d_cython, 96, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fine_utils_im2col_im2col_cython, __pyx_n_s_col2im_6d_cython, 96, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 96, __pyx_L1_error)
 
   /* "View.MemoryView":286
  *         return self.name
@@ -24088,14 +24088,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_utils__im2col_cython) {
+  if (__pyx_module_is_main_fine__utils__im2col_cython) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name_2, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "utils.im2col_cython")) {
-      if (unlikely(PyDict_SetItemString(modules, "utils.im2col_cython", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "fine.utils.im2col_cython")) {
+      if (unlikely(PyDict_SetItemString(modules, "fine.utils.im2col_cython", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -24116,7 +24116,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "utils/im2col/im2col_cython.pyx":1
+  /* "fine/utils/im2col/im2col_cython.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * cimport cython
@@ -24126,7 +24126,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":12
+  /* "fine/utils/im2col/im2col_cython.pyx":12
  *     np.float64_t
  * 
  * def im2col_cython(np.ndarray[DTYPE_t, ndim=4] x, int field_height,             # <<<<<<<<<<<<<<
@@ -24135,17 +24135,17 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_7im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_7im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_float32_t, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_9im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_9im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_float64_t, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_mdef_5utils_13im2col_cython_1im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_mdef_4fine_5utils_13im2col_cython_1im2col_cython, 0, __pyx_n_s_im2col_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   ((__pyx_FusedFunctionObject *) __pyx_t_2)->__signatures__ = __pyx_t_1;
@@ -24154,7 +24154,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_im2col_cython, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":51
+  /* "fine/utils/im2col/im2col_cython.pyx":51
  *                             cols[row, col] = x_padded[i, c, stride * yy + ii, stride * xx + jj]
  * 
  * def col2im_cython(np.ndarray[DTYPE_t, ndim=2] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -24163,17 +24163,17 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_13col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_13col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_float32_t, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_15col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_15col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_float64_t, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_mdef_5utils_13im2col_cython_3col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = __pyx_FusedFunction_New(&__pyx_mdef_4fine_5utils_13im2col_cython_3col2im_cython, 0, __pyx_n_s_col2im_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_empty_tuple);
   ((__pyx_FusedFunctionObject *) __pyx_t_1)->__signatures__ = __pyx_t_2;
@@ -24182,7 +24182,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_col2im_cython, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":96
+  /* "fine/utils/im2col/im2col_cython.pyx":96
  *                             x_padded[n, c, stride * h + hh, stride * w + ww] += cols[c, hh, ww, n, h, w]
  * 
  * def col2im_6d_cython(np.ndarray[DTYPE_t, ndim=6] cols, int N, int C, int H, int W,             # <<<<<<<<<<<<<<
@@ -24191,17 +24191,17 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_5utils_13im2col_cython_19col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_0__pyx_mdef_4fine_5utils_13im2col_cython_19col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_float32_t, __pyx_t_2) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_5utils_13im2col_cython_21col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_fuse_1__pyx_mdef_4fine_5utils_13im2col_cython_21col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_float64_t, __pyx_t_2) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_mdef_5utils_13im2col_cython_5col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_t_2 = __pyx_FusedFunction_New(&__pyx_mdef_4fine_5utils_13im2col_cython_5col2im_6d_cython, 0, __pyx_n_s_col2im_6d_cython, NULL, __pyx_n_s_fine_utils_im2col_cython, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_empty_tuple);
   ((__pyx_FusedFunctionObject *) __pyx_t_2)->__signatures__ = __pyx_t_1;
@@ -24210,7 +24210,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_col2im_6d_cython, __pyx_t_2) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "utils/im2col/im2col_cython.pyx":1
+  /* "fine/utils/im2col/im2col_cython.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * cimport cython
@@ -24381,11 +24381,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init utils.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init fine.utils.im2col_cython", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init utils.im2col_cython");
+    PyErr_SetString(PyExc_ImportError, "init fine.utils.im2col_cython");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
