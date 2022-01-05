@@ -1,9 +1,9 @@
 import gzip
 import numpy as np
-from utils.augment_image import augment_image
+from fine.utils.augment_image import augment_image
 import pathlib
 import os
-from utils.download_file import download_file
+from fine.utils.download_file import download_file
 
 CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 

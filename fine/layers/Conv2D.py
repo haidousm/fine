@@ -1,5 +1,5 @@
 import numpy as np
-from utils.im2col.im2col_cython import im2col_cython, col2im_cython
+from fine.utils.im2col_cython import im2col_cython, col2im_cython
 
 
 class Conv2D:

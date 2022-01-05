@@ -43,4 +43,4 @@ coverage.xml
 demo/server.py
 demo/
 requirements
-/datasets/data
+/fine/datasets/data

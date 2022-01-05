@@ -1,48 +1,50 @@
-from datasets import load_mnist
-from models import Sequential
+from fine.datasets import load_mnist
+from fine.models import Sequential
 
-from layers import Conv2D
-from layers import MaxPool2D
-from layers import Flatten
-from layers import Dense
+from fine.layers import Conv2D
+from fine.layers import MaxPool2D
+from fine.layers import Flatten
+from fine.layers import Dense
 
-from activations import ReLU
-from activations import Softmax
+from fine.activations import ReLU
+from fine.activations import Softmax
 
-from loss import CategoricalCrossEntropy
+from fine.loss import CategoricalCrossEntropy
 
-from models.model_utils import Categorical
+from fine.models.model_utils import Categorical
 
-from optimizers import Adam
+from fine.optimizers import Adam
 
-X_train, y_train, X_test, y_test = load_mnist()
+if __name__ == "__main__":
 
-model = Sequential(
-    layers=[
-        Conv2D(16, (1, 3, 3)),
-        ReLU(),
-        Conv2D(16, (16, 3, 3)),
-        ReLU(),
-        MaxPool2D((2, 2)),
+    X_train, y_train, X_test, y_test = load_mnist()
 
-        Conv2D(32, (16, 3, 3)),
-        ReLU(),
-        Conv2D(32, (32, 3, 3)),
-        ReLU(),
-        MaxPool2D((2, 2)),
+    model = Sequential(
+        layers=[
+            Conv2D(16, (1, 3, 3)),
+            ReLU(),
+            Conv2D(16, (16, 3, 3)),
+            ReLU(),
+            MaxPool2D((2, 2)),
 
-        Flatten(),
-        Dense(1568, 64),
-        ReLU(),
-        Dense(64, 64),
-        ReLU(),
-        Dense(64, 10),
-        Softmax()
-    ],
-    loss=CategoricalCrossEntropy(),
-    optimizer=Adam(decay=1e-3),
-    accuracy=Categorical()
-)
+            Conv2D(32, (16, 3, 3)),
+            ReLU(),
+            Conv2D(32, (32, 3, 3)),
+            ReLU(),
+            MaxPool2D((2, 2)),
 
-model.train(X_train, y_train, epochs=5, batch_size=120, print_every=100)
-model.evaluate(X_test, y_test, batch_size=120)
+            Flatten(),
+            Dense(1568, 64),
+            ReLU(),
+            Dense(64, 64),
+            ReLU(),
+            Dense(64, 10),
+            Softmax()
+        ],
+        loss=CategoricalCrossEntropy(),
+        optimizer=Adam(decay=1e-3),
+        accuracy=Categorical()
+    )
+
+    model.train(X_train, y_train, epochs=5, batch_size=120, print_every=100)
+    model.evaluate(X_test, y_test, batch_size=120)
