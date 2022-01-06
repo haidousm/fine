@@ -31,4 +31,4 @@ jobs:
         env:
           TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
           TWINE_PASSWORD: ${{secrets.TWINE_PASSWORD}}
-        run: twine upload -u $TWINE_USERNAME -p $TWINE_PASSWORD
+        run: twine upload dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
