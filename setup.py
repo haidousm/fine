@@ -21,7 +21,7 @@ extensions = [
 
 setup(
     name="deep-fine",
-    version="1.0.0",
+    version="1.0.1",
     description="an artificial neural network framework built from scratch using just Python and Numpy",
     author="Moussa Haidous",
     author_email="haidous.m@gmail.com",
