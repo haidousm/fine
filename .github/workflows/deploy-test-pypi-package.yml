@@ -15,7 +15,7 @@ jobs:
     - name: Build the Docker Image
       run: docker build . --file Dockerfile --tag pypi-packager
     - name: Build the PyPI Package
-      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager python setup.py sdist bdist_wheel --version=1.0.0-SNAPSHOT
+      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager python setup.py sdist bdist_wheel --version=1.0.0
     - name: Upload the PyPI Package
       env:
         TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
