@@ -1,14 +1,22 @@
-import numpy
-
 from setuptools import setup, Extension
+from setuptools.command.build_ext import build_ext as _build_ext
 from Cython.Build import cythonize
+
+
+class build_ext(_build_ext):
+    def finalize_options(self):
+        _build_ext.finalize_options(self)
+        # Prevent numpy from thinking it is still in its setup process:
+        __builtins__.__NUMPY_SETUP__ = False
+        import numpy
+        self.include_dirs.append(numpy.get_include())
+
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 extensions = [
-    Extension('fine.utils.im2col_cython', ['fine/utils/im2col/im2col_cython.pyx'],
-              include_dirs=[numpy.get_include()]),
+    Extension('fine.utils.im2col_cython', ['fine/utils/im2col/im2col_cython.pyx']),
 ]
 
 setup(
@@ -23,6 +31,7 @@ setup(
               "fine.datasets", "fine.layers", "fine.loss",
               "fine.models", "fine.models.model_utils",
               "fine.models.model_utils.accuracy", "fine.optimizers"],
+    cmdclass={'build_ext': build_ext},
     install_requires=requirements,
     ext_modules=cythonize(extensions),
 )
