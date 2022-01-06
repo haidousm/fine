@@ -30,4 +30,4 @@ jobs:
         env:
           TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
           TWINE_PASSWORD: ${{secrets.TWINE_PASSWORD}}
-        run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager twine upload  --repository testpypi dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
+        run: twine upload  --repository testpypi dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD
