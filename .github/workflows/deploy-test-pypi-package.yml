@@ -24,7 +24,7 @@ jobs:
       - name: Build wheels
         env:
           CIBW_BEFORE_BUILD: pip install numpy cython
-        run: python -m cibuildwheel --output-dir dist --CIBW_BEFORE_BUILD
+        run: python -m cibuildwheel --output-dir dist
       - name: Upload Wheels
         env:
           TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
