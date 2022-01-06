@@ -18,6 +18,6 @@ jobs:
       run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager python setup.py sdist bdist_wheel --version=0.0.1
     - name: Upload the PyPI Package
       env:
-        TWINE_USERNAME: ${{secrets.DOCKER_USER}}
-        TWINE_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
+        TWINE_PASSWORD: ${{secrets.TWINE_PASSWORD}}
       run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager twine upload  --repository testpypi dist/*.tar.gz -u $TWINE_USERNAME -p $TWINE_PASSWORD
