@@ -15,9 +15,9 @@ jobs:
     - name: Build the Docker Image
       run: docker build . --file Dockerfile --tag pypi-packager
     - name: Build the PyPI Package
-      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager python setup.py sdist bdist_wheel --version=0.0.1
+      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager python -m cibuildwheel --output-dir dist
     - name: Upload the PyPI Package
       env:
         TWINE_USERNAME: ${{secrets.TWINE_USERNAME}}
         TWINE_PASSWORD: ${{secrets.TWINE_PASSWORD}}
-      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager twine upload  --repository testpypi dist/*.tar.gz -u $TWINE_USERNAME -p $TWINE_PASSWORD
+      run: docker run --rm -v "${GITHUB_WORKSPACE}":/usr/src/app -w /usr/src/app pypi-packager twine upload  --repository testpypi dist/* -u $TWINE_USERNAME -p $TWINE_PASSWORD

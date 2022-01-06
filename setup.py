@@ -1,13 +1,7 @@
-import sys
 import numpy
 
 from setuptools import setup, Extension
 from Cython.Build import cythonize
-
-number_of_arguments = len(sys.argv)
-version_parameter = sys.argv[-1]
-version = version_parameter.split("=")[1]
-sys.argv = sys.argv[0:number_of_arguments - 1]
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -19,7 +13,7 @@ extensions = [
 
 setup(
     name="deep-fine",
-    version=version,
+    version="1.0.0",
     description="an artificial neural network framework built from scratch using just Python and Numpy",
     author="Moussa Haidous",
     author_email="haidous.m@gmail.com",
