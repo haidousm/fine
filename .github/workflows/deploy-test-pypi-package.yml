@@ -1,8 +1,8 @@
 name: Build & Deploy Test. Fine PyPI Package
 
 on:
-  push:
-    branches: [ main ]
+#   push:
+#     branches: [ main ]
   workflow_dispatch:
 
 jobs:
